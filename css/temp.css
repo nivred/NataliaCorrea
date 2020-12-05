@@ -1,0 +1,101 @@
+/* --- HOME --- */
+header .title {
+  color: var(--insta2);
+  font-size: 3rem;
+  grid-column: 1;
+  grid-row: 1/6;
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 5.4rem;
+  padding: 0 2.5rem;
+  z-index: 20;
+  line-height: 3.8rem;
+  background-color: var(--insta4);
+  /* height: fit-content; */
+  margin: 0;
+  /* padding: 3.5rem 2rem; */
+  display: flex;
+  align-items: center;
+}
+  .home-section .banner-img {
+    box-shadow: none;
+    display: flex;
+    grid-column: 1/13;
+    grid-row: 1/15;
+    overflow: hidden;
+    z-index: -1;
+  }
+    .home-section .banner-img img {
+      /* object-fit: none; */
+      object-position: 131px -110px;
+      /* height: auto; */
+    }
+header .header-callout {
+  align-items: center;
+  background-color: var(--insta1);
+  color: var(--insta3);
+  border: none;
+  /* box-shadow: 4px 4px 10px #555555; */
+  display: flex;
+  /* height: 75px; */
+  justify-content: center;
+  grid-column: 1;
+  grid-row: 6/9;
+  padding: 0 1.5rem;
+  transition: all 1s;
+}
+header .header-callout h1 {
+  color: var(--insta5);
+  /* font-family: 'Dawning of a New Day', cursive; */
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 2.9rem;
+  margin-bottom: 1rem;
+  margin-top: 0rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+  line-height: 2.75rem;
+  margin: 0;
+  text-align: left;
+  word-spacing: 5px;
+}
+header .backdrop {
+  background-color: var(--insta5);
+  grid-column: 1/13;
+  grid-row: 9/15;
+  margin: 0;
+  position: relative;
+  z-index: -1;
+}
+header .intro {
+  grid-column: 1/13;
+  grid-row: 9;
+  padding: 1rem;
+}
+header .intro p {
+  color: #FFFFFF;
+  font-size: 1.35rem;
+  text-shadow: 1px 1px 1px #ce776a;
+}
+header .intro .welcome {
+  display: inline-block;
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 3rem;
+  margin: 0;
+  position: relative;
+}
+  header .intro .welcome::after {
+  content: '';
+  display: inline-flex;
+  height: 30px;
+  width: 110px;
+  background: url(/images/ornament.png) no-repeat;
+  background-position: 0 -10px;
+  position: absolute;
+  bottom: 27px;
+  background-size: cover;
+  right: -120px;
+  transform: rotate(171deg);
+}
+
+
+
+/* --- end HOME --- */

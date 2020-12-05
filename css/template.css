@@ -1,0 +1,98 @@
+/*** VARIABLES ***/
+:root {
+  --primary: #FFC636;
+  --secondary: #090B5B;
+}
+
+/*** RESET ***/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body, h1, h2, h3, h4, p, 
+ul[class],ol[class], li,
+figure, figcaption,
+blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.35;
+  /* min-height: 100vh; */
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class], ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*** BASE STYLES ***/
+body {
+  /* font-family: 'font name'; */
+}
+
+/*** FONTS ***/
+/* @font-face {
+  font-family: 'font name here';
+  src: url('assets/fonts/font-name.ttf');
+} */
+
+/*** MOBILE STYLES ***/
+
+
+/*** SMALL TABLET STYLES ***/
+@media screen and (min-width: 620px) {
+
+}
+
+/*** LARGE TABLET STYLES ***/
+@media screen and (min-width: 960px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+
+/*** DESKTOP STYLES ***/
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+  .content {
+    grid-column: 3/11;
+  }
+}
