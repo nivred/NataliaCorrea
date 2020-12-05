@@ -208,26 +208,26 @@ section .item-container {
 .accordions2 label:hover {
   background-image: linear-gradient(to bottom, var(--insta1), var(--insta2) 80%);
 }
-.accordions2 input + label.arrow::after {
+.accordions2 input + .arrow::after {
+  background-color: var(--insta1);
   content: '';
   display: inline-block;
-  height: 20px; width: 20px;
-  background-color: var(--insta1);
+  height: 30px; width: 30px;
   position: absolute;
-    right: 0px;
+    right: 0;
     top: 50%;
     z-index: -1;
   transform: translate(-50%, -50%) rotate(45deg); 
   transition: all 1s;
+  /* border-radius: 50%; */
 }
-.accordions2 input:not(:checked) + label.arrow::after {
-  right: -20px;
+.accordions2 input + .arrow.select::after {
   background-color: var(--insta3);
-
+  right: -30px;
 }
-.accordions2 input:checked + label::after {
-  right: 0px;
-}
+/* .accordions2 input:checked + label::after {
+  right: -20px;
+} */
 .accordions2 .accordion-content {
   border-bottom-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -235,7 +235,6 @@ section .item-container {
   padding: 10px 25px;
   width: 50%;
 }
-
 .accordions2 .accordion-content.hide {
   /* animation: fadeOut .2s; */
   display: none;
@@ -770,6 +769,102 @@ header .intro .welcome::after {
   body {
     font-size: 20px;
   }
+  .accordions.tabbed {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    position: relative;
+  }
+  .accordions.tabbed .accordion-item {
+    display: flex;
+    flex-direction: row;
+  }
+  .accordions.tabbed input {
+    display: none;
+  }
+  .accordions.tabbed label {
+    background: var(--insta1);
+    border-bottom: 1px solid var(--insta4);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: var(--insta4);
+    cursor: pointer;
+    display: flex;
+    flex-basis: 50%;
+    height: max-content;
+    margin: 0 0 1px 0;
+    padding: 24px 22px;
+    position: relative;
+    transition: ease .5s;
+  }
+  .accordions.tabbed label:hover {
+    background-image: linear-gradient(to bottom, var(--insta1), var(--insta2) 80%);
+  }
+  .accordions.tabbed input + .arrow::after {
+    background-color: var(--insta1);
+    content: '';
+    display: inline-block;
+    height: 30px; width: 30px;
+    position: absolute;
+      right: 0;
+      top: 50%;
+      z-index: -1;
+    transform: translate(-50%, -50%) rotate(45deg); 
+    transition: all 1s;
+  }
+  .accordions.tabbed input + .arrow.select::after {
+    background-color: var(--insta3);
+    right: -30px;
+  }
+  .accordions.tabbed .accordion-content {
+    border: none;
+    margin: 0 0 1px 0;
+    padding: 10px 25px;
+    width: 50%;
+  }
+  .accordions.tabbed .accordion-content.hide {
+    /* animation: fadeOut .2s; */
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .accordions.tabbed .accordion-content.show {
+    /* animation: fadeIn .5s; */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+      top: 0;
+      right: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+  .accordions.tabbed input + label + .accordion-content {
+    display: none;
+    height: 0;
+    /* transition: all 2s; */
+  }
+  .accordions.tabbed input:checked + label + .accordion-content {
+    display: flex;
+  }
+
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
 }
 /* ::::: end DESKTOP STYLES (min-width: 1200px)  ::::: */
 

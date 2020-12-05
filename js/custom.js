@@ -44,52 +44,31 @@
 // });
 
 
-let accInput = document.querySelectorAll('.accordions2 input');
-let accPanel = document.querySelectorAll('.accordions2 label');
-let accContent = document.querySelectorAll('.accordions2 .accordion-content');
-// loop through all accordion labels
-for (let i = 0; i < accPanel.length; i++) {
-  // when an accordion label is clicked do following
-  accPanel[i].addEventListener('click', function () {
-    console.clear();
-    console.log(accPanel[i].previousElementSibling.checked)
+let accInput = document.querySelectorAll('.accordions.tabbed input');
+let accPanel = document.querySelectorAll('.accordions.tabbed label');
+let accContent = document.querySelectorAll('.accordions.tabbed .accordion-content');
 
-    // loop through all accordion content
+// accInput[0].checked = 'true';
+// accContent[0].classList.add('show');
+
+for (let i = 0; i < accInput.length; i++) {
+
+  accInput[i].addEventListener('click', function (e) {
+
     for (let j = 0; j < accContent.length; j++) {
-      // remove all accordion content as a RESET
-      // accContent[j].previousElementSibling.previousElementSibling.checked = 'false';
-      // console.log(accContent[j].previousElementSibling.previousElementSibling.checked)
       accContent[j].classList.remove('show');
-
-      // if this is already showing when clicked
-      if (this.previousElementSibling.checked) {
-        // hide this accordion's content
-        this.nextElementSibling.classList.add('show');
-        // console.log(this.previousElementSibling.checked, 'is checked')
-      }
-      
-      if (accContent[j].classList.contains('show')) {
-        accContent[j].classList.add('arrow');
-      }
-
-
-      
-      // else {
-        // this.nextElementSibling.classList.remove('show');
-        // accContent[j].classList.add('hide');
-
-      // }
-
-
+      accPanel[j].classList.remove('select');
     }
 
+    this.nextElementSibling.classList.add('select');
+    this.nextElementSibling.nextElementSibling.classList.add('show');
 
-
-
+    console.log(this.nextElementSibling);
 
   })
-}
 
+
+}
 
 
 let faqQuestion = document.querySelectorAll('.faq-question');
