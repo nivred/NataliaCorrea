@@ -44,31 +44,58 @@
 // });
 
 
+/* :::::::::::::::::: SCROLL ANIMATION :::::::::::::::::: */
+$(window).scroll(function () {
+  $('.scroll-animation').each(function () {
+    var screenHeight = $(window).height() * 0.5;
+    var imagePos = $(this).offset().top - screenHeight;
+    console.log(imagePos);
+    var imageHeight = $(this).height();
+    var topOfWindow = $(window).scrollTop();
+
+    if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
+      $(this).addClass("fade-in");
+      $(this).removeClass("hide");
+    } else {
+      $(this).removeClass("fade-in");
+    }
+  });
+});
+/* :::::::::::::::::: end SMOOTH ANIMATION :::::::::::::::::: */
+/* :::::::::::::::::: SMOOTH SCROLL :::::::::::::::::: */
+
+$('.scroll').on('click', function () {
+  var offset = 0;
+  var target = this.hash;
+  if ($(this).data('offset') != undefined) offset = $(this).data('offset');
+  $('html, body').animate({
+    'scrollTop': $(target).offset().top - offset
+  }, 1600, 'swing', function () {
+    window.location.hash = target;
+  });
+});
+
+/* :::::::::::::::::: end SMOOTH SCROLL :::::::::::::::::: */
+
+/* :::::::::::::::::: ACCORDION BEHAVIOR :::::::::::::::::: */
 let accInput = document.querySelectorAll('.accordions.tabbed input');
 let accPanel = document.querySelectorAll('.accordions.tabbed label');
 let accContent = document.querySelectorAll('.accordions.tabbed .accordion-content');
 
-// accInput[0].checked = 'true';
-// accContent[0].classList.add('show');
-
 for (let i = 0; i < accInput.length; i++) {
-
   accInput[i].addEventListener('click', function (e) {
 
     for (let j = 0; j < accContent.length; j++) {
       accContent[j].classList.remove('show');
       accPanel[j].classList.remove('select');
     }
-
     this.nextElementSibling.classList.add('select');
     this.nextElementSibling.nextElementSibling.classList.add('show');
-
     console.log(this.nextElementSibling);
-
   })
-
-
 }
+/* :::::::::::::::::: end ACCORDION BEHAVIOR :::::::::::::::::: */
+
 
 
 let faqQuestion = document.querySelectorAll('.faq-question');

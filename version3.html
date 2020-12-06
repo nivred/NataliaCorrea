@@ -26,12 +26,12 @@
       <input type="checkbox" id="hamburger" />
       <label for="hamburger"><span class="sr-only">Menu</span><i class="fas fa-bars"></i></label>
       <ul class="menu">
-        <li><a href="#home"><span>Home</span></a></li>
-        <li><a href="#about"><span>About</span></a></li>
-        <li><a href="#services"><span>Services</span></a></li>
-        <li><a href="#qa"><span>Q&A</span></a></li>
-        <li><a href="#testimonials"><span>Testimonials</span></a></li>
-        <li><a href="#follow"><span>Follow Me</span></a></li>
+        <li><a href="#home" class="scroll" data-offset=""><span>Home</span></a></li>
+        <li><a href="#about" class="scroll" data-offset="150"><span>About</span></a></li>
+        <li><a href="#services" class="scroll" data-offset="75"><span>Services</span></a></li>
+        <li><a href="#qa" class="scroll" data-offset="75"><span>Q&A</span></a></li>
+        <li><a href="#testimonials" class="scroll" data-offset="75"><span>Testimonials</span></a></li>
+        <li><a href="#follow" class="scroll" data-offset="75"><span>Follow Me</span></a></li>
       </ul>
     </nav>
     <main>
@@ -63,8 +63,8 @@
       </header>
   
       <section id="about" class="about-section">
-        <div class="bio-pic">
-          <img class="" src="/images/bioPic.jpg" alt="">
+        <div class="bio-pic scroll-animation hide">
+          <img src="/images/bioPic.jpg" alt="">
         </div>
 
         <div class="item-container">
@@ -89,56 +89,17 @@
           <div class="services-content">
             <h2>Services</h2>
 
-            <div class="accordions tabbed">
-              <div class="accordion-item">
-                <input type="checkbox" id="acc3">
-                <label for="acc3" class="select arrow">Accordion ONE</label>
-                <div class="accordion-content hide show">
-                  <p>Accordion ONE - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero hic facere asperiores distinctio fugit? Voluptates illum suscipit temporibus, accusantium perspiciatis quia explicabo consequuntur.</p>
-                  <p>Expedita fuga eos magni repellat porro quibusdam doloremque qui quidem, incidunt ab nesciunt hic delectus maiores? Quae animi laborum, dolor ad hic minus velit illo commodi?</p>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <input type="checkbox" id="acc4">
-                <label for="acc4" class="arrow">Accordion TWO</label>
-                <div class="accordion-content hide">
-                  <p>Accordion TWO - Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <input type="checkbox" id="acc5">
-                <label for="acc5" class="arrow">My Accordion has a very very long title in it and it makes me nervous</label>
-                <div class="accordion-content hide">
-                  <p>Accordion THREE - Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, non ipsum. Molestias, consequuntur libero! Autem explicabo at dolorem officia nesciunt, eaque rerum id voluptates sit. Dicta sed eum iste ab.</p>
-                </div>
-              </div>
-            </div>
-            <br>
-            <div class="accordions">
-              <div class="accordion-item">
-                <input type="checkbox" id="acc1">
-                <label for="acc1">My Accordion</label>
-                <div class="accordion-content">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <input type="checkbox" id="acc2">
-                <label for="acc2">My Accordion</label>
-                <div class="accordion-content">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </div>
-            
             <div class="card my-4">
               <div class="card-body">
-                <p class="mb-0">I created my 1:1 coaching program to help you achieve food freedom and self-confidence</p>
+                <p class="mb-0">
+                  I created my 1:1 coaching program to help you achieve food freedom and regain your self-confidence.
+                  Ask yourself the following questions below and if they resonate with you a little too well then I
+                  would love to work with you.
+                </p>
               </div>
             </div>
             
-            <ul class="list"><span>Are you...</span>
+            <ul class="list mb-4"><span class="highlight-dark">Are you...</span>
               <li>struggling with emotional and binge eating/overeating?</li>
               <li>always fighting against your body because you feel like if you don’t control it you’ll
                 ********* ?</li>
@@ -156,7 +117,7 @@
                 body?</li>
             </ul>
             
-            <ul class="list"><span>Now, imagine if you... </span>
+            <ul class="list mb-4"><span class="highlight-dark">Now, imagine if you... </span>
               <li>were supported every step of the way to build a healthy relationship with food and with your
                 body?</li>
               <li>were able to understand and manage your emotions without having to use food?</li>
@@ -171,102 +132,210 @@
                 mouth?</li>
             </ul>
 
-
-
-
-            <div class="accordions">
-            
-              <h3>Food Freedom Framework</h3>
-            
-              <input type="checkbox" id="title1" />
-              <label for="title1">Phase 1: Create awareness</label>
-              <div class="content">
-                <ul class="list">
-                  <li>Here we will decode your food story</li>
-                  <li>Recognizing the food fears, rules, beliefs, stereotypes, standards, and biases that are
-                    keeping stuck in the restriction cycle.</li>
-                  <li>Challenge them and discover which ones support you in your life and which ones are no
-                    longer
-                    serving you.</li>
-                  <li>You will discover why you remain stuck between control and lack of control of food, and we
-                    will work on it so that you can gain more stability.</li>
-                  <li>Be prepared to let go of the old stories that have been holding you back from feeling at
-                    peace with
-                    your food and your body and get ready to create new ones that truly support you.</li>
-                </ul>
+            <h3 class="fff">Food Freedom Framework</h3>
+    
+            <div class="accordions tabbed mt-4">
+              <div class="accordion-item">
+                <input type="checkbox" id="acc-phase1">
+                <label for="acc-phase1" class="arrow select">Phase 1: Create awareness</label>
+                <div class="accordion-content hide show">
+                  <ul class="list no-bullet">
+                    <li>Here we will decode your food story</li>
+                    <li>Recognizing the food fears, rules, beliefs, stereotypes, standards, and biases that are
+                      keeping stuck in the restriction cycle.</li>
+                    <li>Challenge them and discover which ones support you in your life and which ones are no
+                      longer
+                      serving you.</li>
+                    <li>You will discover why you remain stuck between control and lack of control of food, and we
+                      will work on it so that you can gain more stability.</li>
+                    <li>Be prepared to let go of the old stories that have been holding you back from feeling at
+                      peace with
+                      your food and your body and get ready to create new ones that truly support you.</li>
+                  </ul>
+                </div>
               </div>
-            
-              <input type="checkbox" id="title2" />
-              <label for="title2">Phase 2: Connect with your body</label>
-              <div class="content">
-                <ul class="list">
-                  <li>Here you will learn how to listen to your body again</li>
-                  <li>You will become aware about the undeniable connection between food and emotions, and how
-                    that
-                    connection shows up in your life</li>
-                  <li>Reconnect with you hunger and satiation cues</li>
-                  <li>Decode your cravings and honor them without feeling like they are controlling you</li>
-                  <li>Recognize and understand the different types of hunger you can experience and learn how to
-                    satisfy
-                    them without guilt</li>
-                </ul>
+              <div class="accordion-item">
+                <input type="checkbox" id="acc-phase2">
+                <label for="acc-phase2" class="arrow">Phase 2: Connect with your body</label>
+                <div class="accordion-content hide">
+                  <ul class="list no-bullet">
+                    <li>Here you will learn how to listen to your body again</li>
+                    <li>You will become aware about the undeniable connection between food and emotions, and how
+                      that
+                      connection shows up in your life</li>
+                    <li>Reconnect with you hunger and satiation cues</li>
+                    <li>Decode your cravings and honor them without feeling like they are controlling you</li>
+                    <li>Recognize and understand the different types of hunger you can experience and learn how to
+                      satisfy
+                      them without guilt</li>
+                  </ul>
+                </div>
               </div>
-            
-              <input type="checkbox" id="title3" />
-              <label for="title3">Phase 3: Trust yourself</label>
-              <div class="content">
-                <ul class="list">
-                  <li>Here you will understand your inner cycles and how those impact relationships with food
-                  </li>
-                  <li>Make changes in your daily lifestyle to feel more comfortable in your body and more at
-                    peace with food</li>
-                  <li>Implement new strategies to help you cultivate calm and find balance with food</li>
-                  <li>Stop fighting against your body. Instead you’ll learn how to build a trust bond between
-                    you and your body</li>
-                </ul>
+              <div class="accordion-item">
+                <input type="checkbox" id="acc-phase3">
+                <label for="acc-phase3" class="arrow">Phase 3: Trust yourself</label>
+                <div class="accordion-content hide">
+                    <ul class="list no-bullet">
+                      <li>Here you will understand your inner cycles and how those impact relationships with food
+                      </li>
+                      <li>Make changes in your daily lifestyle to feel more comfortable in your body and more at
+                        peace with food</li>
+                      <li>Implement new strategies to help you cultivate calm and find balance with food</li>
+                      <li>Stop fighting against your body. Instead you’ll learn how to build a trust bond between
+                        you and your body</li>
+                    </ul>
+                </div>
               </div>
-            
-              <input type="checkbox" id="title4" />
-              <label for="title4">Phase 4: Nourish beyond food</label>
-              <div class="content">
-                <ul class="list">
-                  <li>Establish healthy boundaries tha serve you</li>
-                  <li>Listen to your intuition and live a more fulfilled life</li>
-                  <li>Find your middle ground and make intuitive eating your new lifestyle</li>
-                  <li>Practice self-care on a daily basis and attract the life you desire</li>
-                </ul>
+              <div class="accordion-item">
+                <input type="checkbox" id="acc-phase4">
+                <label for="acc-phase4" class="arrow">Phase 4: Nourish beyond food</label>
+                <div class="accordion-content hide">
+                  <ul class="list no-bullet">
+                    <li>Establish healthy boundaries tha serve you</li>
+                    <li>Listen to your intuition and live a more fulfilled life</li>
+                    <li>Find your middle ground and make intuitive eating your new lifestyle</li>
+                    <li>Practice self-care on a daily basis and attract the life you desire</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-
-
-
           </div>
         </div>
       </section>
-      <section id="qa" class="qa-section">
+      <section id="qa" class="qa-section mt-4">
         <div class="item-container">
           <div class="qa-content">
+
             <h2>Question and Answers</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi nobis numquam non consectetur
-              iste architecto blanditiis. Id voluptas provident ipsam exercitationem temporibus quae labore
-              quam, fuga, suscipit, ullam voluptatem odit?</p>
+
+            <div class="accordions tabbed mt-4">
+              <div class="accordion-item">
+                <input type="checkbox" id="acc3">
+                <label for="acc3" class="select arrow">Who is accepted in the program?</label>
+                <div class="accordion-content hide show">
+                  <p>Naturally Slim participants are accepted based on pre-determined criteria such as health risk
+                  factors and participant willingness to meet all program completion requirements. Additionally, there are
+                  certain medical conditions which will disqualify enrollees from participating.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <input type="checkbox" id="acc4">
+                <label for="acc4" class="arrow">Are the meetings in person?</label>
+                <div class="accordion-content hide">
+                  <p>The Naturally Slim program is an online program so there are no meetings in person. You can watch
+                  your lessons and interact with the program whenever it is convenient for you.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <input type="checkbox" id="acc5">
+                <label for="acc5" class="arrow">What is the time commitment each week?</label>
+                <div class="accordion-content hide">
+                  <p>The lessons will take 30-45 minutes to watch each week. Each lesson is broken up into multiple short
+                  videos so you can watch whenever it is convenient to your schedule. Each lesson is available weekly
+                  so all your weekly videos should be watched within the next 7 days in order to stay on track. (We know
+                  life gets busy! So, don’t worry. You can make up lessons 1 through 20 any time.)</p>
+                </div>
+              </div>
+            </div>
+            <br>
+            <!-- <div class="accordions">
+              <div class="accordion-item">
+                <input type="checkbox" id="acc1">
+                <label for="acc1">My Accordion</label>
+                <div class="accordion-content">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <input type="checkbox" id="acc2">
+                <label for="acc2">My Accordion</label>
+                <div class="accordion-content">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+              </div>
+            </div> -->
+
+
           </div>
         </div>
       </section>
-      <section id="testimonials" class="testimonials-section">
+      <section id="testimonials" class="testimonials-section mt-4">
         <div class="item-container">
           <div class="testimonials-content">
             <h2>Testimonials</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi nobis numquam non consectetur
-              iste architecto blanditiis. Id voluptas provident ipsam exercitationem temporibus quae labore
-              quam, fuga, suscipit, ullam voluptatem odit?</p>
+
+            <div id="testimonial-carousel" class="carousel slide carousel-fade mt-4" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+
+                  <div class="testimonial-section">
+
+                    <div class="testimonial">
+                      <div class="client-image"></div>
+                      <div class="client-testimonial">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptas repellendus, expedita itaque impedit harum quam debitis ad cupiditate explicabo vero, dolorum eaque libero natus repellat delectus. Ut, suscipit eos unde itaque cum, eveniet animi nesciunt nisi aut commodi temporibus doloribus laborum voluptates ratione quia quidem. Impedit ab voluptatem temporibus harum iste consectetur officiis consequuntur incidunt ea! Alias laudantium facere, assumenda provident dolore laborum autem nisi expedita tempora in amet laboriosam, quia quaerat, ipsam saepe quibusdam deleniti. Quibusdam consequuntur perspiciatis quis et aspernatur, ipsa quisquam a illum iste repellat eius quod, dicta corrupti praesentium nihil beatae molestiae quasi nisi suscipit!</p>
+                        <button class="read-more">Read More</button>
+                        <p class="client">Taylor<br>Swift</p>
+                      </div>
+                    </div>
+
+                    <div class="testimonial">
+                      <div class="client-image"></div>
+                      <div class="client-testimonial">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam commodi voluptates odio blanditiis harum vitae perferendis voluptatum odit non, distinctio assumenda ipsam vero doloribus quam maiores quo, ea temporibus sapiente necessitatibus dolorem soluta voluptas at accusantium exercitationem? Nam voluptate quod voluptatibus sint inventore ipsam, repudiandae unde obcaecati facilis tenetur? Assumenda cum reprehenderit quam quae doloribus illum quaerat enim fugit eligendi nihil minima iste, numquam hic ab cumque optio. Non repudiandae explicabo laborum ex? Tempora fugiat beatae placeat, maxime hic cum facere ratione, eum alias, iure tempore laboriosam consequuntur sed debitis optio ex temporibus expedita soluta. Recusandae itaque perspiciatis vel aspernatur, natus totam! Nisi, molestiae excepturi. Rerum neque pariatur voluptas molestias ad facere impedit, ducimus quas. Est harum facilis, sequi natus fugiat voluptatum minus in? Enim animi ipsam, fugiat commodi temporibus facilis ea quisquam quibusdam, corporis est quae aliquid libero possimus, rem minima soluta illo adipisci odit accusantium porro velit molestiae!</p>
+                        <button class="read-more">Read More</button>
+                        <p class="client">Eva<br>Longoria</p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="carousel-item">
+
+                  <div class="testimonial-section">
+
+                    <div class="testimonial">
+                      <div class="client-image"></div>
+                      <div class="client-testimonial">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, velit? Soluta saepe nulla facere quaerat dolor laboriosam aspernatur iure voluptas non! Rerum sint quia culpa.</p>
+                        <button class="read-more">Read More</button>
+                        <p class="client">Robert<br>Downey .Jr</p>
+                      </div>
+                    </div>
+
+                    <div class="testimonial">
+                      <div class="client-image"></div>
+                      <div class="client-testimonial">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, esse?</p>
+                        <button class="read-more">Read More</button>
+                        <p class="client">Selena<br>Gomez</p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
-      <section id="follow" class="follow-section">
+      <section id="follow" class="follow-section mt-5">
         <div class="item-container">
-          <div class="follow-content">
+          <div class="follow-content mt-5">
             <h2>Follow Me</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi nobis numquam non consectetur
               iste architecto blanditiis. Id voluptas provident ipsam exercitationem temporibus quae labore
@@ -275,11 +344,26 @@
         </div>
       </section>
     </main>
+    <footer>
+      <p>Copyright © <nm>
+          <script type="text/javascript">
+            document.write(new Date().getFullYear());
+          </script></nm> - All Rights Reserved | Designed and Developed by <a class=""
+          href="http://dervinmejia.com" target="_blank" rel="noopener noreferrer">Dervin Mejia</a></p>
+    </footer>
   </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+
 
     <script src="js/custom.js"></script>
 
