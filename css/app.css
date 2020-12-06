@@ -543,15 +543,6 @@ header .intro .welcome::after {
 /* --- end ABOUT --- */
 
 
-
-
-
-
-
-
-
-
-
 /* TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 #testimonial-carousel {
@@ -740,29 +731,6 @@ header .intro .welcome::after {
 
 
 /* end TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::: */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ::::: MOBILE STYLES (min-width: 375px) ::::: */
@@ -1001,7 +969,7 @@ header .intro .welcome::after {
   .about-section .bio-pic {
     height: 13rem; width: 16rem;
   }
-  .about-section .bio-pic:after{
+  /* .about-section .bio-pic:after{
     content: '';
     display: block;
     height: 225px; width: 225px;
@@ -1011,6 +979,22 @@ header .intro .welcome::after {
       left: -20px;
     transform: rotate(30deg);
     z-index: -1;
+  } */
+  .about-section .bio-pic .square {
+    display: block;
+    height: 225px; width: 225px;
+    border: 5px solid var(--insta4);
+    position: absolute;
+      top: -65px;
+      left: -20px;
+    transform: rotate(-120deg);
+    z-index: -1;
+    transition: all 3s;
+  }
+  .about-section .bio-pic .square.rotate {
+    transform: rotate(30deg);
+        border: 1px solid var(--insta4);
+
   }
   .about-section .bio-pic img {
     margin: -5rem 0 0 -2rem !important;

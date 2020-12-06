@@ -49,13 +49,17 @@ $(window).scroll(function () {
   $('.scroll-animation').each(function () {
     var screenHeight = $(window).height() * 0.5;
     var imagePos = $(this).offset().top - screenHeight;
-    console.log(imagePos);
     var imageHeight = $(this).height();
     var topOfWindow = $(window).scrollTop();
 
     if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
-      $(this).addClass("fade-in");
-      $(this).removeClass("hide");
+      if ($(this).hasClass('hide')) {
+        $(this).addClass("fade-in");
+        $(this).removeClass("hide");
+      }
+      if ($(this).hasClass('square')) {
+        $(this).addClass("rotate");
+      }
     } else {
       $(this).removeClass("fade-in");
     }
