@@ -78,20 +78,15 @@ p, ul, li, label {
   font-size: 1.35rem;
 }
 ul.list {
-  margin-bottom: 1rem;
+  margin: 4rem auto;
 }
 @media screen and (min-width: 768px) {
   ul.list {
-    margin: auto;
     width: 80%;
   }
 }
-ul.list span {
-  line-height: 7rem;
-  font-size: 2rem;
-  font-style: italic;
-}
 ul.list.no-bullet {
+  margin: .5rem auto;
   width: auto;
 }
 ul.list.no-bullet li::before {
@@ -221,10 +216,12 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 4rem;
+  padding: 1rem;
 }
 footer p {
+  font-size: .75rem;
   margin: 0;
-  padding: 3rem 0;
+  padding: 0;
   text-align: center;
 }
 @media screen and (min-width: 960px) {
@@ -236,6 +233,10 @@ footer p {
   section {
     width: 960px;
     margin: 0 auto;
+  }
+  footer p {
+    font-size: 1rem;
+    padding: 3rem 0;
   }
 }
  .hide {
@@ -382,11 +383,12 @@ nav #hamburger ~ label {
   font-family: "Font Awesome 5 Free";
   font-size: 1.5rem;
   font-weight: 600;
-  grid-column: 9/13;
-  height: 4rem; width: 4rem;
+  grid-column: 8/13;
+  height: 4rem;
+  width: 4rem;
   justify-content: center;
   position: absolute;
-    bottom: 1rem;
+  bottom: 2rem;
   z-index: 10;
 }
 nav .menu {
@@ -501,12 +503,44 @@ header .intro p {
 }
 
 .highlight-dark {
-  color: #FFFFFF;
   background-image: linear-gradient(to right, var(--insta5), #fad4ce);
+  background-size: 0;
   border-radius: 2em 1em 4em / 0.5em 3em;
-  margin-left: -90px;
-  padding: 10px 90px 10px 20px;
+  display: inline-flex;
+  margin-bottom: 1.5rem;
+  /* margin-90px; */
+  padding: 0;
+  transition: all 1s ease;
+}
+.highlight-dark.stroke {
+  background-size: cover;
+  padding: 0 20px;
+}
+.highlight-text {
+  color: var(--text);
+  display: inline-flex;
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 2.5rem;
+  padding-bottom: .75rem;
+  width: 100%;
+  transition: all .15s linear;
+}
+.highlight-text.white {
+  color: #FFFFFF;
   text-shadow: 0 2px 2px var(--insta4);
+  padding-bottom: .75rem;
+}
+@media screen and (min-width: 960px) {
+  .highlight-dark {
+    margin-left: -90px;
+  }
+  .highlight-text {
+    font-size: 2rem;
+  }
+  .highlight-dark.stroke {
+    padding: 0 50px 0 10px;
+  }
 }
 header .intro .welcome {
   display: inline-block;
@@ -969,32 +1003,20 @@ header .intro .welcome::after {
   .about-section .bio-pic {
     height: 13rem; width: 16rem;
   }
-  /* .about-section .bio-pic:after{
-    content: '';
-    display: block;
-    height: 225px; width: 225px;
-    border: 1px solid var(--insta4);
-    position: absolute;
-      top: -65px;
-      left: -20px;
-    transform: rotate(30deg);
-    z-index: -1;
-  } */
   .about-section .bio-pic .square {
     display: block;
     height: 225px; width: 225px;
-    border: 5px solid var(--insta4);
+    border: 3px solid var(--insta4);
     position: absolute;
-      top: -65px;
       left: -20px;
+      top: -65px;
     transform: rotate(-120deg);
-    z-index: -1;
     transition: all 3s;
+    z-index: -1;
   }
   .about-section .bio-pic .square.rotate {
     transform: rotate(30deg);
-        border: 1px solid var(--insta4);
-
+    border: 1px solid var(--insta4);
   }
   .about-section .bio-pic img {
     margin: -5rem 0 0 -2rem !important;
@@ -1013,7 +1035,6 @@ header .intro .welcome::after {
     font-size: 20px;
     position: relative;
   }
-
   .accordions.tabbed {
     display: flex;
     flex-direction: column;
@@ -1027,6 +1048,7 @@ header .intro .welcome::after {
     display: none;
   }
   .accordions.tabbed label {
+    align-items: center;
     background: var(--insta1);
     border-bottom: 1px solid var(--insta4);
     border-top-left-radius: 5px;
@@ -1035,13 +1057,11 @@ header .intro .welcome::after {
     cursor: pointer;
     display: flex;
     flex-basis: 50%;
-    max-height: max-content;
     margin: 0 0 1px 0;
     padding: 24px 22px;
     position: relative;
     transition: ease .5s;
     min-height: 8.5rem;
-    align-items: center;
   }
   .accordions.tabbed label:hover {
     background-image: linear-gradient(to bottom, var(--insta1), var(--insta2) 80%);
@@ -1080,8 +1100,8 @@ header .intro .welcome::after {
     display: flex;
     flex-direction: column;
     position: absolute;
-      top: 0;
       right: 0;
+      top: 0;
     opacity: 1;
     visibility: visible;
   }

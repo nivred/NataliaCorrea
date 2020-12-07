@@ -46,7 +46,7 @@
 
 /* :::::::::::::::::: SCROLL ANIMATION :::::::::::::::::: */
 $(window).scroll(function () {
-  $('.scroll-animation').each(function () {
+  $('.animate').each(function () {
     var screenHeight = $(window).height() * 0.5;
     var imagePos = $(this).offset().top - screenHeight;
     var imageHeight = $(this).height();
@@ -54,14 +54,25 @@ $(window).scroll(function () {
 
     if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
       if ($(this).hasClass('hide')) {
+        console.log(this);
         $(this).addClass("fade-in");
         $(this).removeClass("hide");
       }
       if ($(this).hasClass('square')) {
+        console.log(this);
         $(this).addClass("rotate");
       }
+      if ($(this).hasClass('highlight-dark')) {
+        console.log(this);
+        $(this).addClass("stroke");
+      }
+      if ($(this).hasClass('highlight-text')) {
+        console.log(this);
+        $(this).addClass("white");
+      }
     } else {
-      $(this).removeClass("fade-in");
+      //take away class
+      return
     }
   });
 });
