@@ -705,30 +705,24 @@ header .intro .welcome::after {
   width: 290px;
   z-index: 1;
 }
-
-
-.client-testimonial p {
-  margin-bottom: .5rem;
-  margin-top: 1.4rem;
-}
-.client-testimonial p:first-child {
+.client-testimonial > p:first-child {
   height: 235px;
   overflow-y: hidden;
+  margin-bottom: .5rem;
+  margin-top: 1.4rem;
   position: relative;
 }
 .client-testimonial .read-more {
-  /* background-color: lightyellow; */
   background-color: var(--insta2);
+  border-color: antiquewhite;
+  border-radius: 5px;
+  color: var(--text);
   display: flex;
-  /* display: inline-table; */
-  width: 60%;
-  /* height: 2rem; */
-  /* cursor: pointer; */
   justify-content: center;
-  margin: 1rem auto 2rem;
-  /* text-align: center; */
-  /* justify-content: center;
-  align-content: flex-start; */
+  margin: 1.5rem auto 2rem;
+  padding: 1rem;
+  width: 60%;
+  text-align: center;
 }
 /* .client-testimonial .read-more span {
   border: solid #ada182;
@@ -746,22 +740,34 @@ header .intro .welcome::after {
     vertical-align: tope;
     margin-top: 1rem;
 } */
-.client::before {
-  color: var(--insta4);
-  content: '\2014';
-  display: inline-block;
-  margin-right: 10px;
+.client-name {
+  display: flex;
+  justify-content: flex-end;
 }
-.client {
-  /* text-shadow: 1px 1px black; */
-
-  /* color: var(--text); */
+.client-name p {
+  align-items: center;
   color: var(--insta4);
-/*   font-weight: 700; */
+  display: inline-flex;
   font-style: italic;
-  margin: 0 0 1rem;
+  justify-content: center;
   text-align: right;
 }
+.client-name p::after {
+  /* border: 1px solid var(--insta3); */
+  border-radius: 50%;
+  color: var(--insta3);
+  content: '\2765';
+  display: flex;
+  font-size: 3rem;
+  font-style: normal;
+  height: 3rem; width: 3rem;
+  line-height: 2.8rem;
+  margin-left: .5rem;
+  text-shadow: 1px -1px white;
+  transform: rotate(90deg);
+  padding-left: .5rem;
+}
+
 
 
 /* end TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::: */
