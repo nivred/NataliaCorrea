@@ -47,8 +47,8 @@
 /* :::::::::::::::::: SCROLL ANIMATION :::::::::::::::::: */
 $(window).scroll(function () {
   $('.animate').each(function () {
-    var screenHeight = $(window).height() * 0.5;
-    var imagePos = $(this).offset().top - screenHeight;
+    var halfScreenHeight = $(window).height() * 0.5;
+    var imagePos = $(this).offset().top - halfScreenHeight;
     var imageHeight = $(this).height();
     var topOfWindow = $(window).scrollTop();
 
@@ -74,9 +74,26 @@ $(window).scroll(function () {
       //take away class
       return
     }
+
+
   });
+  
+  $('nav #hamburger ~ label').hide();
+  clearTimeout($.data(this, 'scrollTimer'));
+  $.data(this, 'scrollTimer', setTimeout(function () {
+    $('nav #hamburger ~ label').fadeIn();
+    // $('nav #hamburger ~ label').show();
+    console.log("Haven't scrolled in 250ms!");
+  }, 1000));
+
+    // $(window).scroll(function () {
+    //   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+    //    DO SOMETHING WHEN BOTTOM IS REACHED
+    //   }
+    // });
+
 });
-/* :::::::::::::::::: end SMOOTH ANIMATION :::::::::::::::::: */
+/* :::::::::::::::::: end SCROLL ANIMATION :::::::::::::::::: */
 /* :::::::::::::::::: SMOOTH SCROLL :::::::::::::::::: */
 
 $('.scroll').on('click', function () {

@@ -177,37 +177,6 @@ h3.fff {
   position: relative;
   text-align: center;
 }
-h3.fff::before {
-  /* background-color: var(--insta1); */
-  /* box-shadow: 1px 2px 5px gray; */
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  content: '';
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 2rem 15rem; 
-  position: absolute;
-    top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  z-index: -1;
-}
-h3.fff::after {
-  border-top: 1px solid var(--insta5);
-  content: '';
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-    top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 90%;
-  z-index: -2;
-}
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -439,6 +408,7 @@ nav {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 100%;
+  z-index: 100;
 }
 nav input {
   display: none;
@@ -462,9 +432,8 @@ nav #hamburger ~ label {
   font-weight: 600;
   -ms-grid-column: 8;
   -ms-grid-column-span: 5;
-  grid-column: 8/13;
-  height: 4rem;
-  width: 4rem;
+  grid-column: 9/13;
+  height: 4rem; width: 4rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -473,19 +442,19 @@ nav #hamburger ~ label {
   z-index: 10;
 }
 nav .menu {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: #FFFFFF;
   border-radius: 25px;
   display: none;
   font-size: 1.5rem;
   width: 100%;
   padding: 1rem 0;
   position: absolute;
-    bottom: 0.5rem;
+    bottom: 0;
   text-align: center;
 }
 nav .menu li a {
   color: var(--insta4);
-  line-height: 2.5rem;
+  line-height: 3rem;
 }
 nav #hamburger:checked ~ label {
   font-size: .85rem;
@@ -493,6 +462,17 @@ nav #hamburger:checked ~ label {
   -ms-grid-column-span: 3;
   grid-column: 10/13;
   height: 3rem; width: 3rem;
+}
+nav #hamburger:checked ~ label i {
+  display: none;
+}
+nav #hamburger:checked ~ label::after {
+  content: '\2715';
+  display: flex;
+  font-size: 1.5rem;
+  /* height: 2rem; width: 2rem; */
+  /* background-color: yellow; */
+
 }
 nav input:checked + label + .menu {
   display: -webkit-box;
@@ -1086,6 +1066,40 @@ header .intro .welcome::after {
   }
   /* --- end ABOUT --- */
 
+  /* --- SERVICES --- */
+  h3.fff::after {
+    border-top: 1px solid var(--insta5);
+    content: '';
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+      top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 90%;
+    z-index: -2;
+  }
+  h3.fff::before {
+    /* background-color: var(--insta1); */
+    /* box-shadow: 1px 2px 5px gray; */
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    content: '';
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 2rem 15rem; 
+    position: absolute;
+      top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: -1;
+  }
+
+  /* --- end SERVICES --- */
 }
 
 /* ::::: end TABLET STYLES (min-width: 768px)  ::::: */
@@ -1223,21 +1237,6 @@ header .intro .welcome::after {
     display: -ms-grid;
     display: grid;
     height: auto;
-  }
-  header .backdrop::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    z-index: -1;
-    background: url(/images/leaf-filigree.png) 710px 440px no-repeat;
-    -webkit-transform: rotate(-8deg);
-        -ms-transform: rotate(-8deg);
-            transform: rotate(-8deg);
-    background-size: 440px;
-    opacity: 0.3;
   }
   header .backdrop::after {
     color: #FFFFFF;
