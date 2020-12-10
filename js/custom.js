@@ -109,40 +109,64 @@ $('.scroll').on('click', function () {
 /* :::::::::::::::::: end SMOOTH SCROLL :::::::::::::::::: */
 
 /* :::::::::::::::::: ACCORDION TABBED BEHAVIOR :::::::::::::::::: */
+
+// by default, have first tabbed accordion item selected and showing content
+$('.accordions.tabbed .accordion-item:first-child label').addClass('select');
+
 let accInput = document.querySelectorAll('.accordions.tabbed input');
 let accPanel = document.querySelectorAll('.accordions.tabbed label');
 let accContent = document.querySelectorAll('.accordions.tabbed .accordion-content');
 
 // when accordion clicked
 for (let i = 0; i < accInput.length; i++) {
-  accInput[i].addEventListener('click', function (e) {
-    // hide content and unselect all accordion items
-    for (let j = 0; j < accContent.length; j++) {
-      accContent[j].classList.remove('show');
-      accPanel[j].classList.remove('select');
+  accInput[i].addEventListener('click', function () {
+
+    if ($(this).parent().parent().hasClass('tabbed')) {
+
+      $(this).parent().parent().each(function () {
+        // console.log(this);
+        $('label', $(this)).each(function () {
+          $(this).removeClass('select');
+        })
+        $('.accordion-content', $(this)).each(function () {
+          $(this).removeClass('show');
+        })
+
+      }); 
+      $(this).next().addClass('select');
+      $(this).next().next().addClass('show');
+
+    } else {
+      console.log($(this).parent().parent());
     }
+
+    // hide content and unselect all accordion items
+    // for (let j = 0; j < accContent.length; j++) {
+    //   accContent[j].classList.remove('show');
+    //   accPanel[j].classList.remove('select');
+    // }
     // clicked accordion item is selected and shows it's content
-    this.nextElementSibling.classList.add('select');
-    this.nextElementSibling.nextElementSibling.classList.add('show');
+    // this.nextElementSibling.classList.add('select');
+    // this.nextElementSibling.nextElementSibling.classList.add('show');
   })
 }
 
 // on screen size change under 1024px - remove tabbed functionality - else add
 $(document).ready(function () {
-  if ($(window).width() < 1024) {
-    $('.accordions .accordion-content').removeClass('hide');
-  } else {
+  if ($(window).width() >= 1024) {
     $('.accordions .accordion-content').addClass('hide');
-    $('.accordions .accordion-content:first-child').addClass('show');
+  } else {
+    $('.accordions .accordion-content').removeClass('hide');
+    $('.accordions .accordion-content:first-child').removeClass('show');
     // $('.accordions .accordion-content').addClass('show');
   }
 });
 $(window).resize(function () {
-  if ($(window).width() < 1024) {
-    $('.accordions .accordion-content').removeClass('hide');
-  } else {
+  if ($(window).width() >= 1024) {
     $('.accordions .accordion-content').addClass('hide');
-    $('.accordions .accordion-content:first-child').addClass('show');
+  } else {
+    $('.accordions .accordion-content').removeClass('hide');
+    $('.accordions .accordion-content:first-child').removeClass('show');
     // $('.accordions .accordion-content').addClass('show');
   }
 });
