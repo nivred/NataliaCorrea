@@ -77,57 +77,76 @@ $(window).scroll(function () {
 
 
   });
-  
+
   $('nav #hamburger ~ label').hide();
   clearTimeout($.data(this, 'scrollTimer'));
   $.data(this, 'scrollTimer', setTimeout(function () {
     $('nav #hamburger ~ label').fadeIn();
-    // $('nav #hamburger ~ label').show();
-    console.log("Haven't scrolled in 250ms!");
   }, 1000));
 
-    // $(window).scroll(function () {
-    //   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-    //    DO SOMETHING WHEN BOTTOM IS REACHED
-    //   }
-    // });
+  // $(window).scroll(function () {
+  //   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+  //    DO SOMETHING WHEN BOTTOM IS REACHED
+  //   }
+  // });
 
 });
 /* :::::::::::::::::: end SCROLL ANIMATION :::::::::::::::::: */
 /* :::::::::::::::::: SMOOTH SCROLL :::::::::::::::::: */
-
+// when nav link clicked
 $('.scroll').on('click', function () {
   var offset = 0;
   var target = this.hash;
+  //if data-offset found in anchor tag, move to determined position 
   if ($(this).data('offset') != undefined) offset = $(this).data('offset');
   $('html, body').animate({
-    'scrollTop': $(target).offset().top - offset
-  }, 1600, 'swing', function () {
-    window.location.hash = target;
+    'scrollTop': $(target).offset().top - offset //calculate new position
+  }, 1500, 'swing', function () { // length of duration (1.5 seconds) with 'swing' effect
+    window.location.hash = target; // show hash target in URL for accessibility
   });
 });
 
 /* :::::::::::::::::: end SMOOTH SCROLL :::::::::::::::::: */
 
-/* :::::::::::::::::: ACCORDION BEHAVIOR :::::::::::::::::: */
+/* :::::::::::::::::: ACCORDION TABBED BEHAVIOR :::::::::::::::::: */
 let accInput = document.querySelectorAll('.accordions.tabbed input');
 let accPanel = document.querySelectorAll('.accordions.tabbed label');
 let accContent = document.querySelectorAll('.accordions.tabbed .accordion-content');
 
+// when accordion clicked
 for (let i = 0; i < accInput.length; i++) {
   accInput[i].addEventListener('click', function (e) {
-
+    // hide content and unselect all accordion items
     for (let j = 0; j < accContent.length; j++) {
       accContent[j].classList.remove('show');
       accPanel[j].classList.remove('select');
     }
+    // clicked accordion item is selected and shows it's content
     this.nextElementSibling.classList.add('select');
     this.nextElementSibling.nextElementSibling.classList.add('show');
-    console.log(this.nextElementSibling);
   })
 }
-/* :::::::::::::::::: end ACCORDION BEHAVIOR :::::::::::::::::: */
 
+// on screen size change under 1024px - remove tabbed functionality - else add
+$(document).ready(function () {
+  if ($(window).width() < 1024) {
+    $('.accordions .accordion-content').removeClass('hide');
+  } else {
+    $('.accordions .accordion-content').addClass('hide');
+    $('.accordions .accordion-content:first-child').addClass('show');
+    // $('.accordions .accordion-content').addClass('show');
+  }
+});
+$(window).resize(function () {
+  if ($(window).width() < 1024) {
+    $('.accordions .accordion-content').removeClass('hide');
+  } else {
+    $('.accordions .accordion-content').addClass('hide');
+    $('.accordions .accordion-content:first-child').addClass('show');
+    // $('.accordions .accordion-content').addClass('show');
+  }
+});
+/* :::::::::::::::::: end ACCORDION BEHAVIOR :::::::::::::::::: */
 
 
 let faqQuestion = document.querySelectorAll('.faq-question');
