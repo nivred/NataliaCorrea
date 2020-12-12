@@ -54,35 +54,75 @@ $(window).scroll(function () {
 
     if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
       if ($(this).hasClass('hide')) {
-        console.log(this);
         $(this).addClass("fade-in");
         $(this).removeClass("hide");
       }
       if ($(this).hasClass('square')) {
-        console.log(this);
         $(this).addClass("rotate");
-      }
-      if ($(this).hasClass('highlight-dark')) {
-        console.log(this);
-        $(this).addClass("stroke");
-      }
-      if ($(this).hasClass('highlight-text')) {
-        console.log(this);
-        $(this).addClass("white");
       }
     } else {
       //take away class
       return
     }
+  });
+  $('.animate').each(function () {
+    var thirdScreenHeight = $(window).height() * 0.65;
+    imagePos = $(this).offset().top - thirdScreenHeight;
+    imageHeight = $(this).height();
+    topOfWindow = $(window).scrollTop();
 
-
+    if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
+      if ($(this).hasClass('highlight-dark')) {
+        $(this).addClass("stroke");
+      }
+      if ($(this).hasClass('highlight-text')) {
+        $(this).addClass("white");
+      }
+      if ($(this).hasClass('fff')) {
+        $(this).addClass("expand");
+      }
+    } else {
+      //take away class
+      return
+    }
   });
 
-  $('nav #hamburger ~ label').hide();
-  clearTimeout($.data(this, 'scrollTimer'));
-  $.data(this, 'scrollTimer', setTimeout(function () {
-    $('nav #hamburger ~ label').fadeIn();
-  }, 1000));
+
+  // When page ready - Add fade in/out with scroll when screen less than 960px - Else keep hidden
+  $(document).ready(function () {
+    if ($(window).width() <= 960) {
+      $('nav #hamburger ~ label').hide();
+      clearTimeout($.data(this, 'scrollTimer'));
+      $.data(this, 'scrollTimer', setTimeout(function () {
+        $('nav #hamburger ~ label').fadeIn();
+      }, 1000));
+    } else {
+      $('nav #hamburger ~ label').hide();
+    }
+  });
+  // When screen is resized - Add fade in/out with scroll when screen less than 960px - Else keep hidden
+  $(window).resize(function () {
+    if ($(window).width() <= 960) {
+      $('nav #hamburger ~ label').hide();
+      clearTimeout($.data(this, 'scrollTimer'));
+      $.data(this, 'scrollTimer', setTimeout(function () {
+        $('nav #hamburger ~ label').fadeIn();
+      }, 1000));
+    } else {
+      $('nav #hamburger ~ label').hide();
+    }
+  });
+
+
+
+
+
+
+  // $('nav #hamburger ~ label').hide();
+  // clearTimeout($.data(this, 'scrollTimer'));
+  // $.data(this, 'scrollTimer', setTimeout(function () {
+  //   $('nav #hamburger ~ label').fadeIn();
+  // }, 1000));
 
   // $(window).scroll(function () {
   //   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
