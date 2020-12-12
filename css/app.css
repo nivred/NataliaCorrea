@@ -364,7 +364,7 @@ footer p {
   cursor: pointer;
   display: block;
   margin: 0 0 1px 0;
-  padding: 8px 45px 8px 22px;
+  padding: 8px 45px 8px 1rem;
   position: relative;
   -webkit-transition: ease .5s;
   -o-transition: ease .5s;
@@ -377,17 +377,17 @@ footer p {
 }
 .accordions label::after {
   color: var(--insta3);
-	content: '\f078';
-	font-family: "Font Awesome 5 Free";
-	font-size: 22px;
-	font-weight: 600; /*won't display without this*/
-	position: absolute;
-    right: 10px;
-    top: 50%;
+  content: '\f078';
+  font-family: "Font Awesome 5 Free";
+  font-size: 22px;
+  font-weight: 600; /*won't display without this*/
+  position: absolute;
+  right: 1rem;
+  top: 50%;
   text-shadow: 0 1px 2px var(--insta4);
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .accordions input:checked + label::after {
 	content: '\f077';
@@ -398,8 +398,13 @@ footer p {
   border-right: 1px solid var(--insta2);
   border-bottom-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  margin: 0 0 1px 0;
-  padding: 10px 25px;
+/*   margin: 0 0 1px 0; */
+  padding: .25rem 1rem;
+}
+@media screen and (min-width: 768px){
+  .accordions .accordion-content {
+    padding: .65rem 1.5rem;
+  }
 }
 .accordions input + label + .accordion-content {
   display: none;
