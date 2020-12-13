@@ -198,10 +198,17 @@ function showSlides(n) {
 
 /* :::::::::::::::::: TESTIMONIALS - READ MORE :::::::::::::::::: */
 
-
-
-
-
+/* :::::::::::::::::: INSTAFEED :::::::::::::::::: */
+var feed = new Instafeed({
+  get: 'user',
+  userId: '212506693815055',
+  resolution: 'standard_resolution',
+  limit: 12,
+  target: 'instafeed',
+  accessToken: 'IGQVJXVElBS21mcE9vZAHJxcFNmSHZA6ejZAiNzNON2FoV2o1RV9vWWxoZADJNa1psZA2NnQTZAVVWtDOS1WNm9EVDhsd2NLeVBJaDc0N1Ixc1RCR3VuUmttQ0VZAbG53TWV1blpGN0NYM3hYUC1yR0pGY2Y3egZDZD'
+});
+feed.run();
+/* :::::::::::::::::: end INSTAFEED :::::::::::::::::: */
 
 
 

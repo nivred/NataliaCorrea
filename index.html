@@ -54,9 +54,6 @@
     }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
-  </div>
-  
   <div class="main-container">
     <nav class="navigation">
       <input type="checkbox" id="hamburger" />
@@ -401,12 +398,66 @@
         <div class="item-container">
           <div class="follow-content mt-5">
             <h2>Follow Me</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi nobis numquam non consectetur
-              iste architecto blanditiis. Id voluptas provident ipsam exercitationem temporibus quae labore
-              quam, fuga, suscipit, ullam voluptatem odit?</p>
-            <div class="instafeed">
+
+<style>
+    .follow-section .insta {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0 4rem;
+    }
+    .follow-section .insta-link {
+      padding: 0 4rem;
+    }
+    .follow-section .insta-info p:last-child {
+      margin: 0;
+    }
+    .follow-section i {
+    color: var(--salmon);
+    font-size: 11rem;
+    text-shadow: 2px 2px 4px var(--brown);
+    }
+    .follow-section .click {
+    justify-self: end;
+    margin-right: 1.5rem;
+    margin-bottom: 7rem;
+    }
+    .follow-section .pointer {
+    font-size: 1.5rem;
+    display: inline-block;
+    transform: rotate(90deg);
+    }
+    .follow-section .find {
+    padding: 1rem;
+    width: 100%;
+    }
+    .follow-section .find img {
+    display: inline !important;
+    }
+</style>
+
+            <div class="insta">
+              <div class="insta-link">
+                <a href="https://www.instagram.com/nutrientdensenatalia/" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <span class="click"><span class="pointer">⤶</span> Click here</span>
+              </div>
+              <div class="insta-info">
+                <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+                  alt="instagram logo">
+                <p>@nutrientdensenatalia</p>
+                <p>If you'd like to message me, sign up for my services, or just stay informed on my latest updates and offers you can find me at
+                  <a href="https://www.instagram.com/nutrientdensenatalia/" target="_blank" rel="noopener noreferrer">Instagram</a>. There, you'll be able to view all my posts, stories, and reals. Don't be left out, give me a follow</p>
+                  
+              </div>
 
             </div>
+            <div id="instafeed">
+
+            </div>
+            <!-- <div class="facebook"> -->
+              <div class="fb fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+            <!-- </div> -->
           </div>
         </div>
       </section>
@@ -430,7 +481,7 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
 
-
+    <script type="text/javascript" src="./js/instafeed.js"></script>
 
     <script src="js/custom.js"></script>
 
