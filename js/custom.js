@@ -1,56 +1,10 @@
-// let navLinks = document.querySelectorAll(".navbar-light .navbar-nav .nav-link");
-// for (let i = 0; i < navLinks.length; i++) {
-//   navLinks[i].style.color = "#DDD3C0";
-// }
-
-
-// window.onscroll = function () { scrollDown() };
-
-// function scrollDown() {
-//   if (document.body.scrollTop > 515 || document.documentElement.scrollTop > 515) {
-//     document.querySelector(".navbar").style.backgroundColor = "#8A9D91";
-//     // document.querySelector(".navbar").style.backgroundImage = "linear-gradient(to bottom right, #a8beb0 , #8A9D91)";
-//     document.querySelector(".navbar").style.boxShadow = "box-shadow: 0 5px 25px 5px rgb(70, 70, 70)";
-//     document.querySelector(".navbar").style.transition = "transition: all 1s ease-in";
-//     for (let i = 0; i < navLinks.length; i++) {
-//       navLinks[i].style.color = "initial";
-//     }
-
-//   } else {
-//     document.querySelector(".navbar").style.backgroundColor = "rgba(0, 0, 0, .35)";
-//     document.querySelector(".navbar").style.backgroundImage = "none";
-//     document.querySelector(".navbar").style.boxShadow = "none";
-//     document.querySelector(".navbar").style.transition = "transition: all 1s ease-in";
-//     for (let i = 0; i < navLinks.length; i++) {
-//       navLinks[i].style.color = "#DDD3C0";
-//     }
-
-//   }
-// }
-
-
-
-
-// function scrollUp() {
-//   if ((document.body.scrollTop < 700 || document.documentElement.scrollTop < 700) &&
-//     (document.body.scrollTop > 680 || document.documentElement.scrollTop > 680))  {
-//     document.querySelector(".navbar").style.transition = "transition: all 1s ease-in";
-//   }
-// }
-
-
-/* :::::::::::::::::: FAQs :::::::::::::::::: */
-// $('.faq-question a').click(function (event) {
-// });
-
-
 /* :::::::::::::::::: SCROLL ANIMATION :::::::::::::::::: */
 $(window).scroll(function () {
   $('.animate').each(function () {
-    var halfScreenHeight = $(window).height() * 0.5;
-    var imagePos = $(this).offset().top - halfScreenHeight;
-    var imageHeight = $(this).height();
-    var topOfWindow = $(window).scrollTop();
+    const halfScreenHeight = $(window).height() * 0.5;
+    const imagePos = $(this).offset().top - halfScreenHeight;
+    const imageHeight = $(this).height();
+    const topOfWindow = $(window).scrollTop();
 
     if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
       if ($(this).hasClass('hide')) {
@@ -66,7 +20,7 @@ $(window).scroll(function () {
     }
   });
   $('.animate').each(function () {
-    var thirdScreenHeight = $(window).height() * 0.65;
+    const thirdScreenHeight = $(window).height() * 0.65;
     imagePos = $(this).offset().top - thirdScreenHeight;
     imageHeight = $(this).height();
     topOfWindow = $(window).scrollTop();
@@ -113,17 +67,6 @@ $(window).scroll(function () {
     }
   });
 
-
-
-
-
-
-  // $('nav #hamburger ~ label').hide();
-  // clearTimeout($.data(this, 'scrollTimer'));
-  // $.data(this, 'scrollTimer', setTimeout(function () {
-  //   $('nav #hamburger ~ label').fadeIn();
-  // }, 1000));
-
   // $(window).scroll(function () {
   //   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
   //    DO SOMETHING WHEN BOTTOM IS REACHED
@@ -135,8 +78,8 @@ $(window).scroll(function () {
 /* :::::::::::::::::: SMOOTH SCROLL :::::::::::::::::: */
 // when nav link clicked
 $('.scroll').on('click', function () {
-  var offset = 0;
-  var target = this.hash;
+  let offset = 0;
+  let target = this.hash;
   //if data-offset found in anchor tag, move to determined position 
   if ($(this).data('offset') != undefined) offset = $(this).data('offset');
   $('html, body').animate({
@@ -153,9 +96,9 @@ $('.scroll').on('click', function () {
 // by default, have first tabbed accordion item selected and showing content
 $('.accordions.tabbed .accordion-item:first-child label').addClass('select');
 
-let accInput = document.querySelectorAll('.accordions.tabbed input');
-let accPanel = document.querySelectorAll('.accordions.tabbed label');
-let accContent = document.querySelectorAll('.accordions.tabbed .accordion-content');
+const accInput = $('.accordions.tabbed input');
+const accPanel = $('.accordions.tabbed label');
+const accContent = $('.accordions.tabbed .accordion-content');
 
 // when accordion clicked
 for (let i = 0; i < accInput.length; i++) {
@@ -164,18 +107,15 @@ for (let i = 0; i < accInput.length; i++) {
     if ($(this).parent().parent().hasClass('tabbed')) {
 
       $(this).parent().parent().each(function () {
-        // console.log(this);
         $('label', $(this)).each(function () {
           $(this).removeClass('select');
         })
         $('.accordion-content', $(this)).each(function () {
           $(this).removeClass('show');
         })
-
       }); 
       $(this).next().addClass('select');
       $(this).next().next().addClass('show');
-
     } else {
       console.log($(this).parent().parent());
     }
@@ -198,7 +138,6 @@ $(document).ready(function () {
   } else {
     $('.accordions .accordion-content').removeClass('hide');
     $('.accordions .accordion-content:first-child').removeClass('show');
-    // $('.accordions .accordion-content').addClass('show');
   }
 });
 $(window).resize(function () {
@@ -207,10 +146,82 @@ $(window).resize(function () {
   } else {
     $('.accordions .accordion-content').removeClass('hide');
     $('.accordions .accordion-content:first-child').removeClass('show');
-    // $('.accordions .accordion-content').addClass('show');
   }
 });
 /* :::::::::::::::::: end ACCORDION BEHAVIOR :::::::::::::::::: */
+
+
+/* :::::::::::::::::: TESTIMONIALS - READ MORE :::::::::::::::::: */
+$('.testimonial-item .read-more').on('click', function () {
+  $(this).parents('.testimonial-item').addClass('flip');
+  $(this).parents('.testimonial-item').css('height', '760px')
+  $(this).parents().prev().find('.quotes').fadeOut();
+  $(this).parents('.front').next().find('.client-testimonial').delay(800).fadeIn(400);
+});
+
+$('.testimonial-item .back-arrow').on('click', function () {
+  $(this).parents('.testimonial-item').removeClass('flip');
+  $(this).parents('.testimonial-item').css('height', '490px')
+  $(this).parent().prev().find('.quotes').fadeIn();
+  var k = $(this).next().next().hide();
+  console.log(k);
+});
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "flex";
+  dots[slideIndex - 1].className += " active";
+}
+
+
+/* :::::::::::::::::: TESTIMONIALS - READ MORE :::::::::::::::::: */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 let faqQuestion = document.querySelectorAll('.faq-question');
@@ -271,6 +282,10 @@ for (let i = 0; i < faqQuestion.length; i++) {
   }); 
 }
 /* :::::::::::::::::: end FAQs :::::::::::::::::: */
+
+
+
+
 
 
 /* :::::::::::::::::: TESTIMONIALS - READ MORE :::::::::::::::::: */
