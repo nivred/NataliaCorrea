@@ -741,43 +741,14 @@ header .intro .welcome::after {
 
 
 /* TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-#testimonial-carousel {
-  margin-bottom: 4rem;
-}
-.carousel-control-next, .carousel-control-prev {
-  background-color: var(--insta5);
-  border-radius: 50%;
-  -webkit-box-shadow: 1px 2px 5px #A8A8A8;
-          box-shadow: 1px 2px 5px #A8A8A8;
-  opacity: 1;
-  top: initial;
-  bottom: -8rem;
-  width: 6rem;
-  height: 6rem;
-}
-.carousel-control-next:hover, .carousel-control-prev:hover {
-  background-color: var(--insta2);
-}
-.carousel-control-next {
-  right: 34% !important;
-  -webkit-transform: translateX(-36.5%) !important;
-      -ms-transform: translateX(-36.5%) !important;
-          transform: translateX(-36.5%) !important;
-}
-.carousel-control-prev {
-  left: 42.5% !important;
-  -webkit-transform: translateX(-44%) !important;
-      -ms-transform: translateX(-44%) !important;
-          transform: translateX(-44%) !important;
-}
-.testimonial-section {
+/* .testimonial-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin: auto;
-}
+} */
 .testimonial-item {
   background-color: transparent;
   display: -webkit-box;
@@ -1085,17 +1056,6 @@ a.prev:hover, a.next:hover {
 /* Add an italic font style to all quotes */
 q {font-style: italic;}
 
-
-
-/* ================================================= */
-
-
-
-
-
-
-
-
 /* end TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 
@@ -1204,8 +1164,6 @@ q {font-style: italic;}
     margin: 0.5rem 0 0 1rem !important;
     height: 16rem;
     width: 16rem;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
   /* --- end ABOUT --- */
 
@@ -1226,7 +1184,7 @@ q {font-style: italic;}
     z-index: -2;
   }
   h3.fff.expand::after {
-    width: 835px;
+    width: 740px;
   }
   h3.fff::before {
     /* background-color: var(--insta1); */
@@ -1573,13 +1531,9 @@ q {font-style: italic;}
 
 /* end TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 }
+/* ::::: end TABLET / LARGE MOBILE LANDSCAPE STYLES (min-width: 768px)  ::::: */
 
-/* ::::: end TABLET STYLES (min-width: 768px)  ::::: */
-
-
-
-
-/* ::::: LARGE TABLET STYLES (min-width: 960px) ::::: */
+/* ::::: LANDSCAPE LARGE MOBILE STYLES (min-width: 960px) ::::: */
 @media screen and (min-width: 960px) {
   body {
     font-size: 18px;
@@ -1671,7 +1625,6 @@ q {font-style: italic;}
     width: 330px;
     /* margin-bottom: 50px; */
   }
-
   header .header-callout {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -1697,32 +1650,31 @@ q {font-style: italic;}
   }
   header .backdrop {
     background-color: var(--insta5);
+    display: -ms-grid;
+    display: grid;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-column: 3/11;
     -ms-grid-row: 5;
     -ms-grid-row-span: 15;
     grid-row: 5/20;
+    height: auto;
     margin: 0;
     position: relative;
-    /* z-index: -1; */
-    display: -ms-grid;
-    display: grid;
-    height: auto;
   }
   header .intro {
+    display: block;
     -ms-grid-column: 1;
     -ms-grid-column-span: 6;
     grid-column: 1/7;
     -ms-grid-row: 6;
     grid-row: 6;
-    margin-top: 1rem;
-    padding: 0 2rem;
     height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
+    margin-top: 1rem;
+    padding: 0 2rem;
     z-index: 80;
-    display: block;
   }
   .home-section .banner-img {
     -webkit-box-shadow: 2px 2px 5px rgb(75, 75, 75);
@@ -1773,15 +1725,15 @@ q {font-style: italic;}
     border: 1px solid var(--insta4);
   }
   .about-section .bio-pic img {
-    margin: -5rem 0 0 -2rem !important;
     height: 16rem; width: 16rem;
+    margin: -5rem 0 0 -2rem !important;
   }
   /* --- end ABOUT --- */
 }
-/* ::::: end LARGE TABLET STYLES (min-width: 960px)  ::::: */
+/* ::::: end LANDSCAPE LARGE MOBILE STYLES (min-width: 960px)  ::::: */
 
 
-/* ::::: DESKTOP STYLES (min-width: 1024px) ::::: */
+/* ::::: LAPTOP STYLES (min-width: 1024px) ::::: */
 @media screen and (min-width: 1024px) {
   body {
     background-image: -o-radial-gradient(#FFFFFF 70%, #EFEFEF);
@@ -1827,12 +1779,12 @@ q {font-style: italic;}
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
     margin: 0 0 1px 0;
+    min-height: 8.5rem;
     padding: 24px 22px;
     position: relative;
     -webkit-transition: ease .5s;
     -o-transition: ease .5s;
     transition: ease .5s;
-    min-height: 8.5rem;
   }
   .accordions.tabbed label:hover {
     background-image: -webkit-gradient(linear, left top, left bottom, from(var(--insta1)), color-stop(80%, var(--insta2)));
@@ -1852,7 +1804,6 @@ q {font-style: italic;}
     -webkit-transform: translate(-50%, -50%) rotate(45deg);
         -ms-transform: translate(-50%, -50%) rotate(45deg);
             transform: translate(-50%, -50%) rotate(45deg);
-    /* transition: all 1s; */
   }
   .accordions.tabbed input + .arrow.select::after {
     background-color: var(--insta3);
@@ -1865,13 +1816,11 @@ q {font-style: italic;}
     width: 50%;
   }
   .accordions.tabbed .accordion-content.hide {
-    /* animation: fadeOut .2s; */
     display: none;
     opacity: 0;
     visibility: hidden;
   }
   .accordions.tabbed .accordion-content.show {
-    /* animation: fadeIn .5s; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1888,14 +1837,12 @@ q {font-style: italic;}
   .accordions.tabbed input + label + .accordion-content {
     display: none;
     height: 0;
-    /* transition: all 2s; */
   }
   .accordions.tabbed input:checked + label + .accordion-content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-
 }
 /* ::::: end DESKTOP STYLES (min-width: 1200px)  ::::: */
 
