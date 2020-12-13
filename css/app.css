@@ -75,7 +75,7 @@ html, body {
 hr {
   margin: 4rem 0;
 }
-p, ul, li, label {
+p, q, ul, li, label {
   color: var(--text);
   font-size: 1.35rem;
 }
@@ -737,14 +737,10 @@ header .intro .welcome::after {
   -webkit-box-shadow: 2px 2px 5px rgb(75, 75, 75);
           box-shadow: 2px 2px 5px rgb(75, 75, 75);
 }
-.about-section .bio-pic img {
-  /* object-fit: contain; */
-}
 /* --- end ABOUT --- */
 
 
 /* TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
 #testimonial-carousel {
   margin-bottom: 4rem;
 }
@@ -849,7 +845,6 @@ header .intro .welcome::after {
   font-weight: bold;
   margin-right: 5px;
 }
-
 .client-image::before {
   border-radius: 50%;
   content: '';
@@ -861,8 +856,6 @@ header .intro .welcome::after {
   z-index: -1;
 } 
 .client-image::after {
-  background: url('https://i.pinimg.com/originals/2e/2f/ac/2e2fac9d4a392456e511345021592dd2.jpg') no-repeat center center;
-  background-size: cover;
   border-radius: 50%;
   -webkit-box-shadow: inset 0 0 6px 0px #FFFFFF;
           box-shadow: inset 0 0 6px 0px #FFFFFF;
@@ -874,6 +867,18 @@ header .intro .welcome::after {
           transform: translateX(-50%, -50%);
   width: 100px;
   z-index: 1;
+}
+.client-image.one::after {
+  background: url('https://i.pinimg.com/originals/2e/2f/ac/2e2fac9d4a392456e511345021592dd2.jpg') no-repeat center center;
+  background-size: cover;
+}
+.client-image.two::after {
+  background: url('https://www.thesun.co.uk/wp-content/uploads/2019/07/NINTCHDBPICT000502631083.jpg') no-repeat center center;
+  background-size: cover;
+}
+.client-image.three::after {
+  background: url('https://images.statusfacebook.com/profile_pictures/cute-profile-picture/cute-profile-picture-for-whatsapp-facebook-82.jpg') no-repeat center center;
+  background-size: cover;
 }
 .client-image {
   -webkit-box-align: center;
@@ -917,8 +922,6 @@ header .intro .welcome::after {
   text-shadow: 1px 1px 4px rgba(75, 75, 75, 0.5);
   z-index: 1;
 }
-
-
 .client-testimonial {
   flex-direction: column;
   height: 100%;
@@ -951,6 +954,7 @@ header .intro .welcome::after {
   background-color: var(--insta2);
   border-color: antiquewhite;
   border-radius: 5px;
+  border-style: groove;
   color: var(--text);
   cursor: pointer;
   display: -webkit-box;
@@ -1243,6 +1247,331 @@ q {font-style: italic;}
   }
 
   /* --- end SERVICES --- */
+/* TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+#testimonial-carousel {
+  margin-bottom: 4rem;
+}
+.carousel-control-next, .carousel-control-prev {
+  background-color: var(--insta5);
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 2px 5px #A8A8A8;
+          box-shadow: 1px 2px 5px #A8A8A8;
+  opacity: 1;
+  top: initial;
+  bottom: -8rem;
+  width: 6rem;
+  height: 6rem;
+}
+.carousel-control-next:hover, .carousel-control-prev:hover {
+  background-color: var(--insta2);
+}
+.carousel-control-next {
+  right: 34% !important;
+  -webkit-transform: translateX(-36.5%) !important;
+      -ms-transform: translateX(-36.5%) !important;
+          transform: translateX(-36.5%) !important;
+}
+.carousel-control-prev {
+  left: 42.5% !important;
+  -webkit-transform: translateX(-44%) !important;
+      -ms-transform: translateX(-44%) !important;
+          transform: translateX(-44%) !important;
+}
+.testimonial-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+}
+.testimonial-item {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 490px; width: 550px;
+  margin: 3rem 0 0;
+  padding: 1.5rem;
+  perspective: 1000px;
+  position: relative;
+  transition: all 1s;
+}
+.testimonial-item .front::before {
+  border: 1px solid var(--insta1);
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 5px 0px #A8A8A8;
+          box-shadow: 1px 1px 5px 0px #A8A8A8;
+  content: '';
+  height: 150px;
+  position: absolute;
+    left: 50%;
+    top: -60px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 150px;
+  z-index: -1;
+}
+.testimonial-content {
+  background-color: var(--insta1);
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 5px #A8A8A8;
+          box-shadow: 0 2px 5px #A8A8A8;
+  height: 100%; width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+.testimonial-item.flip .testimonial-content {
+  transform: rotateY(180deg);
+}
+.testimonial-item .front, .testimonial-item .back {
+  backface-visibility: hidden;
+  background-color: var(--insta1);
+  height: 100%; width: 100%;
+  position: absolute;
+}
+.testimonial-item .back {transform: rotateY(180deg);}
+.testimonial-item .back-arrow {
+  color: var(--insta4);
+  cursor: pointer;
+  position: absolute;
+    left: 1.5rem;
+    top: 4rem;
+  z-index: 2;
+
+}
+.testimonial-item .back-arrow::before {
+  content: '\276C';
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.client-image::before {
+  border-radius: 50%;
+  content: '';
+  height: 70px; width: 70px;
+  position: absolute;
+  -webkit-transform: translateX(-50%, -50%);
+      -ms-transform: translateX(-50%, -50%);
+          transform: translateX(-50%, -50%);
+  z-index: -1;
+} 
+.client-image::after {
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 6px 0px #FFFFFF;
+          box-shadow: inset 0 0 6px 0px #FFFFFF;
+  content: '';
+  height: 100px;
+  position: absolute;
+  -webkit-transform: translateX(-50%, -50%);
+      -ms-transform: translateX(-50%, -50%);
+          transform: translateX(-50%, -50%);
+  width: 100px;
+  z-index: 1;
+}
+.client-image.one::after {
+  background: url('https://i.pinimg.com/originals/2e/2f/ac/2e2fac9d4a392456e511345021592dd2.jpg') no-repeat center center;
+  background-size: cover;
+}
+.client-image.two::after {
+  background: url('https://www.thesun.co.uk/wp-content/uploads/2019/07/NINTCHDBPICT000502631083.jpg') no-repeat center center;
+  background-size: cover;
+}
+.client-image.three::after {
+  background: url('https://images.statusfacebook.com/profile_pictures/cute-profile-picture/cute-profile-picture-for-whatsapp-facebook-82.jpg') no-repeat center center;
+  background-size: cover;
+}
+.client-image {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--insta1);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 148px; width: 148px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+    left: 50%;
+    top: -58px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.client-image .quotes::before {
+  color: var(--insta2);
+  content: '\275D';
+  font-size: 15rem;
+  height: 1px;
+  position: absolute;
+    left: -9rem;
+    top: -50px;
+  text-shadow: 1px 1px 4px rgba(75, 75, 75, .5);
+  z-index: 1;
+}
+.client-image .quotes::after {
+  color: var(--insta2);
+  content: '\275E';
+  font-size: 15rem;
+  height: 1px;
+  position: absolute;
+    right: -9rem;
+    top: -50px;
+  text-shadow: 1px 1px 4px rgba(75, 75, 75, 0.5);
+  z-index: 1;
+}
+.client-testimonial {
+  flex-direction: column;
+  height: 100%;
+  padding: 0 1.5rem 1.5rem;
+  text-align: center;
+  font-style: italic;
+}
+.front .client-testimonial, .back .client-testimonial {
+  position: absolute;
+    top: 100px;
+}
+.back .client-testimonial {
+  display: none;
+  text-align: left;
+}
+.client-testimonial p:last-child {
+  margin: 0;
+}
+.client-testimonial > .part {
+  height: 150px;
+  overflow-y: hidden;
+  position: relative;
+}
+.client-testimonial > .full {
+  margin-bottom: .5rem;
+  margin-top: 1.4rem;
+  position: relative;
+}
+.client-testimonial .read-more {
+  background-color: var(--insta2);
+  border-color: antiquewhite;
+  border-radius: 5px;
+  border-style: groove;
+  color: var(--text);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+    display: flex;
+  -webkit-box-pack: center;
+    -ms-flex-pack: center;
+      justify-content: center;
+  margin: 1.5rem auto 2rem;
+  padding: 1rem;
+  text-align: center;
+  width: 60%;
+}
+.client-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: space-between;
+  align-items: center;
+}
+.client-name p {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--insta4);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-style: italic;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: right;
+}
+.client-name::before {
+  border-radius: 50%;
+  color: var(--insta3);
+  content: '\2765';
+  display: -webkit-box;
+  display: -ms-flexbox;
+    display: flex;
+  font-size: 3rem;
+  font-style: normal;
+  height: 3rem; width: 3rem;
+  justify-content: center;
+  line-height: 2.8rem;
+  text-shadow: 1px -1px white;
+  -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+}
+.slideshow-container {
+  position: relative;
+}
+.mySlides {
+  display: none;
+  justify-content: center;
+  text-align: center;
+}
+a.prev, a.next {
+  align-items: center;
+  background-color: var(--insta5);
+  border-radius: 50%;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  height: 5rem;
+  width: 5rem;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  opacity: .8;
+  position: absolute;
+  bottom: -10rem;
+  user-select: none;
+}
+a.prev {left: 37%;}
+@media screen and (min-width: 960px) {
+  a.prev {left: 40%}
+}
+a.next {right: 37%;}
+@media screen and (min-width: 960px) {
+  a.next {right: 40%}
+}
+a.prev:hover, a.next:hover {
+  color: white;
+  opacity: 1;
+}
+.dot-container {
+  text-align: center;
+  padding: 20px;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--insta1);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: var(--insta5);
+}
+q {font-style: italic;}
+
+/* end TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 }
 
 /* ::::: end TABLET STYLES (min-width: 768px)  ::::: */
@@ -1448,12 +1777,11 @@ q {font-style: italic;}
     height: 16rem; width: 16rem;
   }
   /* --- end ABOUT --- */
-
 }
 /* ::::: end LARGE TABLET STYLES (min-width: 960px)  ::::: */
 
 
-/* ::::: DESKTOP STYLES (min-width: 1200px) ::::: */
+/* ::::: DESKTOP STYLES (min-width: 1024px) ::::: */
 @media screen and (min-width: 1024px) {
   body {
     background-image: -o-radial-gradient(#FFFFFF 70%, #EFEFEF);
