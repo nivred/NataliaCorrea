@@ -339,22 +339,6 @@ footer p {
     opacity: 0;
   }
 }
-/* Facebook */
-.fb-like, .fb-like span, .fg-like iframe {
-  max-width: 320px;
-  display: inline-block;
-  word-wrap: break-word;
-  white-space: normal
-}
-.fb-like iframe {
-  margin-top: 2rem !important;
-}
-@media screen and (max-width: 340px) {
-  .fb-like, .fb-like span, .fg-like iframe {
-    width: 280px !important;
-    background-color: green;
-  }
-}
 /* Bootstrap Overrides */
 .card {
   background-color: var(--insta1);
@@ -784,15 +768,88 @@ header .intro .welcome::after {
 
 /* end TESTIMONIALS ::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* FOLLOW ME */
+.follow-section .insta {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column-reverse;
+  align-items: center;
+  margin: 1rem 0 2rem;
+}
+.follow-section .insta-link {
+  margin-top: 1rem;
+  padding: 0 4rem;
+}
+.follow-section .insta-info p:last-child {
+  margin: 0;
+}
+.follow-section i {
+color: var(--salmon);
+font-size: 11rem;
+text-shadow: 2px 2px 4px var(--brown);
+}
+.follow-section .follow {
+  display: flex;
+  justify-content: center;
+}
 #instafeed {
   display: flex;
   flex-flow: wrap;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
   justify-content: space-between;
-  row-gap: 1rem; 
 }
-#instafeed a img {
-  width: 200px;
+#instafeed a {
+  width: 47%;
 }
+/* Facebook */
+.fb-like, .fb-like span, .fg-like iframe {
+  width: 320px !important;
+  display: inline-block;
+  word-wrap: break-word;
+  white-space: normal
+}
+.fb-like iframe {
+  margin-top: 2rem !important;
+  width: 290px !important;
+}
+@media screen and (max-width: 340px) {
+  .fb-like, .fb-like span, .fg-like iframe {
+    width: 280px !important;
+  }
+  .fg-like > span > iframe {width: 280px !important;}
+}
+@media screen and (min-width: 768px) {
+  .follow-section .insta {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0 4rem;
+  }
+  .follow-section .insta-link {
+    padding: 0 4rem;
+  }
+  .follow-section .insta-info p:last-child {
+    margin: 0;
+  }
+  .follow-section i {
+  color: var(--salmon);
+  font-size: 11rem;
+  text-shadow: 2px 2px 4px var(--brown);
+  }
+  .follow-section .follow {
+    display: flex;
+    justify-content: center;
+  }
+  #instafeed {
+    justify-content: space-between;
+    row-gap: 1rem; 
+  }
+  #instafeed a {
+    width: 220px;
+  }
+}
+
 /* end FOLLOW ME */
 
 /* ::::: MOBILE STYLES (min-width: 375px) ::::: */

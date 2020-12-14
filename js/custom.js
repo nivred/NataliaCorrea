@@ -227,10 +227,6 @@ feed.run();
 
 
 
-
-
-
-
 let faqQuestion = document.querySelectorAll('.faq-question');
 let faqAnswer = document.querySelectorAll('.faq-answer');
 
