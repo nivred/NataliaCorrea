@@ -789,6 +789,8 @@ text-shadow: 2px 2px 4px var(--brown);
 }
 .follow-section .follow {
   display: flex;
+  font-size: 1.75rem;
+  font-weight: 700;
   justify-content: center;
 }
 #instafeed {
