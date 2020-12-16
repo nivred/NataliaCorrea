@@ -216,7 +216,7 @@ $(document).ready(function () {
       $(this).prev().prev().removeClass('extend');
       $('a.prev').css('left', '-1rem');
       $('a.next').css('right', '-1rem');
-      $(this).hide();
+      $('.read-less').hide();
       $('.read-more').show();
     });    
   }
