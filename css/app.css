@@ -79,6 +79,7 @@ p, q, ul, li, label {
   color: var(--text);
   font-size: 1.35rem;
 }
+q:before, q:after{ content: "";}
 ul.list {
   margin: 4rem auto;
 }
@@ -237,6 +238,9 @@ h3.fff {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-column: 1/13;
+}
+.main-container {
+  overflow-x: hidden;
 }
 section a {
   color: var(--insta5);
@@ -770,6 +774,9 @@ header .intro .welcome::after {
 }
 .testimonial-item .client-testimonial .part.extend {
   display: flex;
+  -webkit-line-clamp: initial;
+  -webkit-box-orient: initial;
+  text-align: left;
 }
 .testimonial-item a.read-more {
   display: inline-block;
