@@ -5,7 +5,7 @@ $(window).scroll(function () {
     const imagePos = $(this).offset().top - halfScreenHeight;
     const imageHeight = $(this).height();
     const topOfWindow = $(window).scrollTop();
-
+    // if element is greater than .5 of screen height - animate
     if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
       if ($(this).hasClass('hide')) {
         $(this).addClass("fade-in");
@@ -24,7 +24,7 @@ $(window).scroll(function () {
     imagePos = $(this).offset().top - thirdScreenHeight;
     imageHeight = $(this).height();
     topOfWindow = $(window).scrollTop();
-
+    // if element is greater than .65 of screen height - animate
     if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
       if ($(this).hasClass('highlight-dark')) {
         $(this).addClass("stroke");
@@ -40,8 +40,6 @@ $(window).scroll(function () {
       return
     }
   });
-
-
   // When page ready - Add fade in/out with scroll when screen less than 960px - Else keep hidden
   $(document).ready(function () {
     if ($(window).width() <= 960) {
@@ -52,6 +50,18 @@ $(window).scroll(function () {
       }, 1000));
     } else {
       $('nav #hamburger ~ label').hide();
+    }
+    // if orientation changes to landscape change menu position
+    if (window.matchMedia("(orientation: landscape)").matches) {
+      $('nav #hamburger ~ label').css({
+        'grid-column': '11/13',
+        'bottom': '0'
+      });
+    } else {
+      $('nav #hamburger ~ label').css({
+        'grid-column': '9/13',
+        'bottom': '1rem'
+      });
     }
   });
   // When screen is resized - Add fade in/out with scroll when screen less than 960px - Else keep hidden
@@ -65,16 +75,41 @@ $(window).scroll(function () {
     } else {
       $('nav #hamburger ~ label').hide();
     }
+    // if orientation changes to landscape change menu position
+    if (window.matchMedia("(orientation: landscape)").matches) {
+      // you're in LANDSCAPE mode
+      console.log('LANDSCAPE')
+      $('nav #hamburger ~ label').css({
+        'grid-column': '11/13',
+        'bottom': '0'
+      });
+    } else {
+      $('nav #hamburger ~ label').css({
+        'grid-column': '9/13',
+        'bottom': '1rem'
+      });
+    }
   });
+
+  // if (window.matchMedia("(orientation: portrait)").matches) {
+  //   // you're in PORTRAIT mode
+  //   console.log('PORTRAIT')
+  // }
+
+  // if (window.matchMedia("(orientation: landscape)").matches) {
+  //   // you're in LANDSCAPE mode
+  //   console.log('LANDSCAPE')
+  // }
 
   // $(window).scroll(function () {
   //   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
   //    DO SOMETHING WHEN BOTTOM IS REACHED
   //   }
   // });
-
 });
 /* :::::::::::::::::: end SCROLL ANIMATION :::::::::::::::::: */
+
+
 /* :::::::::::::::::: SMOOTH SCROLL :::::::::::::::::: */
 // when nav link clicked
 $('.scroll').on('click', function () {
@@ -88,11 +123,10 @@ $('.scroll').on('click', function () {
     window.location.hash = target; // show hash target in URL for accessibility
   });
 });
-
 /* :::::::::::::::::: end SMOOTH SCROLL :::::::::::::::::: */
 
-/* :::::::::::::::::: ACCORDION TABBED BEHAVIOR :::::::::::::::::: */
 
+/* :::::::::::::::::: ACCORDION TABBED BEHAVIOR :::::::::::::::::: */
 // by default, have first tabbed accordion item selected and showing content
 $('.accordions.tabbed .accordion-item:first-child label').addClass('select');
 
@@ -166,8 +200,10 @@ $('.testimonial-item .back-arrow').on('click', function () {
   var k = $(this).next().next().hide();
   console.log(k);
 });
+/* :::::::::::::::::: end TESTIMONIALS - READ MORE :::::::::::::::::: */
 
 
+/* :::::::::::::::::: CAROUSEL - FOR TESTIMONIALS :::::::::::::::::: */
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -194,11 +230,10 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "flex";
   dots[slideIndex - 1].className += " active";
 }
+/* :::::::::::::::::: end CAROUSEL - FOR TESTIMONIALS :::::::::::::::::: */
 
 
-/* :::::::::::::::::: TESTIMONIALS - READ MORE :::::::::::::::::: */
-
-/* :::::::::::::::::: INSTAFEED :::::::::::::::::: */
+/* :::::::::::::::::: INSTAFEED - DYNAMIC DISPLAY OF INSTAGRAM FEED :::::::::::::::::: */
 var feed = new Instafeed({
   get: 'user',
   userId: '212506693815055',
@@ -208,7 +243,11 @@ var feed = new Instafeed({
   accessToken: 'IGQVJXVElBS21mcE9vZAHJxcFNmSHZA6ejZAiNzNON2FoV2o1RV9vWWxoZADJNa1psZA2NnQTZAVVWtDOS1WNm9EVDhsd2NLeVBJaDc0N1Ixc1RCR3VuUmttQ0VZAbG53TWV1blpGN0NYM3hYUC1yR0pGY2Y3egZDZD'
 });
 feed.run();
-/* :::::::::::::::::: end INSTAFEED :::::::::::::::::: */
+/* :::::::::::::::::: end INSTAFEED - DYNAMIC DISPLAY OF INSTAGRAM FEED :::::::::::::::::: */
+
+
+
+
 
 
 
