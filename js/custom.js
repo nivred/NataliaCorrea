@@ -207,42 +207,17 @@ $(document).ready(function () {
       console.log($(this).prev());
 
       if ($('.part.extend').length === 0) {
-        $(this).parent('.client-testimonial').find('.part').addClass('extend');
+        $(this).prev().addClass('extend');
         $('a.prev').css('left', '-4rem');
         $('a.next').css('right', '-4rem');
-        $('.testimonial-item .read-more').html('Read Less');
+        $(this).html('Read Less');
       } else {
-        $(this).parent('.client-testimonial').find('.part').removeClass('extend');
+        $(this).prev().removeClass('extend');
         $('a.prev').css('left', '-1rem');
         $('a.next').css('right', '-1rem');
-        $('.testimonial-item .read-more').html('Read More');
+        $(this).html('Read More');
       }
-    });
-
-    
-    // $(".part").each(function () {
-    //   if (!$('.part.extended').length === 0) {
-    //     console.log('extended')
-    //   } else {
-    //     console.log('not');
-    //   }
-    // });
-
-  
-      // if ($('.part.extended').length > -1 ) {
-      //   console.log('extended')
-      // } else {
-      //   console.log('not');
-      // }
-
-    // if ($('.part.extended').length) {
-    //   console.log('extended');
-    //   $('a.prev').css('left', '-1rem');
-    //   $('a.next').css('right', '-1rem');
-    //   $('.testimonial-item .read-more').html('Read More');
-    // } else {
-    //   console.log($('.part.extended'));
-    // }
+    });    
   }
 });
 
