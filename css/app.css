@@ -768,7 +768,9 @@ header .intro .welcome::after {
   -webkit-box-orient: vertical;
   margin-bottom: 1rem;
 }
-
+.testimonial-item .client-testimonial .part.extend {
+  display: flex;
+}
 .testimonial-item a.read-more {
   display: inline-block;
   border: 1px solid var(--insta2);
@@ -836,6 +838,7 @@ a.prev, a.next {
   height: 5rem; width: 2.5rem;
   position: absolute;
   top: 155px;
+  transition: all .5s linear;
 }
 a.prev {
   left: -1rem;
