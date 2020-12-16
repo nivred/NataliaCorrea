@@ -208,16 +208,16 @@ $(document).ready(function () {
       $(this).prev().addClass('extend');
       $('a.prev').css('left', '-4rem');
       $('a.next').css('right', '-4rem');
-      $(this).hide();
-      $('.read-less').show().css('display', 'inline-block');
+      $('.read-more').css('display', 'none');
+      $('.read-less').css('display', 'inline-block');
     });
     $('.testimonial-item .read-less').on('click', function () {
       console.log($(this).prev());
       $(this).prev().prev().removeClass('extend');
       $('a.prev').css('left', '-1rem');
       $('a.next').css('right', '-1rem');
-      $('.read-less').hide();
-      $('.read-more').show();
+      $('.read-less').css('display', 'none');
+      $('.read-more').css('display', 'inline-block');
     });    
   }
 });
