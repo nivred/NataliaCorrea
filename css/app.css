@@ -778,17 +778,21 @@ header .intro .welcome::after {
   -webkit-box-orient: initial;
   text-align: left;
 }
-.testimonial-item a.read-more {
+.testimonial-item a.read-more,
+.testimonial-item a.read-less {
   display: inline-block;
   border: 1px solid var(--insta2);
+  margin-top: 1rem;
   padding: .5rem 1rem;
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1rem;
   position: relative;
 }
+.testimonial-item a.read-less {
+  display: none;
+}
 .client-name {
-  margin: 1rem 0;
+  margin: 2rem 0 1rem;
   padding-bottom: 9rem;
   position: relative;
 }

@@ -205,18 +205,19 @@ $(document).ready(function () {
     $('.testimonial-item .read-more').on('click', function () {
       console.log('clicked');
       console.log($(this).prev());
-
-      if ($('.part.extend').length === 0) {
-        $(this).prev().addClass('extend');
-        $('a.prev').css('left', '-4rem');
-        $('a.next').css('right', '-4rem');
-        $(this).html('Read Less');
-      } else {
-        $(this).prev().removeClass('extend');
-        $('a.prev').css('left', '-1rem');
-        $('a.next').css('right', '-1rem');
-        $(this).html('Read More');
-      }
+      $(this).prev().addClass('extend');
+      $('a.prev').css('left', '-4rem');
+      $('a.next').css('right', '-4rem');
+      $(this).hide();
+      $('.read-less').show().css('display', 'inline-block');
+    });
+    $('.testimonial-item .read-less').on('click', function () {
+      console.log($(this).prev());
+      $(this).prev().prev().removeClass('extend');
+      $('a.prev').css('left', '-1rem');
+      $('a.next').css('right', '-1rem');
+      $(this).hide();
+      $('.read-more').show();
     });    
   }
 });
