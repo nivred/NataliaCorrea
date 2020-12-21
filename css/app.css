@@ -622,7 +622,7 @@ header .header-callout h1 {
   line-height: 1.45rem;
   margin: 0;
   text-align: center;
-  word-spacing: 5px;
+  /* word-spacing: 5px; */
 }
 header .backdrop {
   background-color: var(--insta5);
@@ -721,11 +721,48 @@ header .intro p {
 header .intro .welcome {
   display: inline-block;
   font-family: 'Mr Dafoe', cursive;
-  font-size: 3rem;
-  margin: 0;
+  font-size: 2.75rem;
+  line-height: 2.5rem;
+  margin-bottom: 0.5rem;
   position: relative;
 }
-header .intro .welcome::after {
+header .intro a.cta {
+  background-color: var(--insta1);
+  border-color: 1px solid var(--insta2);
+  border-radius: 30px;
+  /* border-style: groove; */
+  color: var(--text);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 1.5rem 0 2rem auto;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  width: 60%;
+}
+header .intro a.cta:hover {
+  background-color: #FFFFFF;
+  color: var(--insta5);
+  font-weight: bold;
+  /* background-color: var(--insta2); */
+}
+/* header .intro a.cta::after {
+  color: #FFFFFF;
+  content: 'I want to work with you';
+  display: inline-flex;
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  position: absolute;
+  right: -21.5rem;
+  top: 0.5rem;
+} */
+/* header .intro .welcome::after {
   content: '';
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -741,7 +778,7 @@ header .intro .welcome::after {
   -webkit-transform: rotate(171deg);
       -ms-transform: rotate(171deg);
           transform: rotate(171deg);
-}
+} */
 /* --- end HOME --- */
 /* --- ABOUT --- */
 .about-section .bio-pic img {
@@ -1327,16 +1364,16 @@ q {font-style: italic;}
 .client-testimonial a.read-more {
   background-color: var(--insta2);
   border-color: 1px solid antiquewhite;
-  border-radius: 5px;
-  border-style: groove;
+  border-radius: 30px;
+  border-style: ;
   color: var(--text);
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
-    display: flex;
+  display: flex;
   -webkit-box-pack: center;
-    -ms-flex-pack: center;
-      justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 1.5rem auto 2rem;
   padding: 1rem;
   text-align: center;
@@ -1426,7 +1463,7 @@ a.prev:hover, a.next:hover {
   body {
     font-size: 18px;
   }
-   /* --- NAVIGATION --- */
+  /* --- NAVIGATION --- */
   nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1494,6 +1531,18 @@ a.prev:hover, a.next:hover {
     transition: all 0.3s;
   }
   /* --- end NAVIGATION --- */
+}
+/* ::::: end LANDSCAPE LARGE MOBILE STYLES (min-width: 960px)  ::::: */
+
+
+/* ::::: LAPTOP STYLES (min-width: 1024px) ::::: */
+@media screen and (min-width: 1024px) {
+  body {
+    background-image: -o-radial-gradient(#FFFFFF 70%, #EFEFEF);
+    background-image: radial-gradient(#FFFFFF 70%, #EFEFEF);
+    font-size: 20px;
+    position: relative;
+  }
   /* --- HOME --- */
   header .title {
     -webkit-box-shadow: 2px 2px 5px rgb(75, 75, 75);
@@ -1534,7 +1583,7 @@ a.prev:hover, a.next:hover {
     z-index: 10;
   }
   header .header-callout h1 {
-    font-size: 3.15rem;
+    font-size: 2.25rem;
   }
   header .backdrop {
     background-color: var(--insta5);
@@ -1617,18 +1666,12 @@ a.prev:hover, a.next:hover {
     margin: -5rem 0 0 -2rem !important;
   }
   /* --- end ABOUT --- */
-}
-/* ::::: end LANDSCAPE LARGE MOBILE STYLES (min-width: 960px)  ::::: */
 
 
-/* ::::: LAPTOP STYLES (min-width: 1024px) ::::: */
-@media screen and (min-width: 1024px) {
-  body {
-    background-image: -o-radial-gradient(#FFFFFF 70%, #EFEFEF);
-    background-image: radial-gradient(#FFFFFF 70%, #EFEFEF);
-    font-size: 20px;
-    position: relative;
-  }
+
+
+
+
   .accordions.tabbed {
     display: -webkit-box;
     display: -ms-flexbox;
