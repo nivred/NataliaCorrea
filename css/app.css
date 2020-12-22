@@ -1650,20 +1650,16 @@ a.prev:hover, a.next:hover {
   }
   header .title {
     -webkit-box-shadow: 2px 2px 5px rgb(75, 75, 75);
-    box-shadow: 2px 2px 5px rgb(75, 75, 75);
+            box-shadow: 2px 2px 5px rgb(75, 75, 75);
     font-size: 5rem;
     -ms-grid-column: 3;
     -ms-grid-column-span: 3;
-    grid-column: 4/7;
+          grid-column: 4/12;
     -ms-grid-row: 3;
     -ms-grid-row-span: 4;
-    grid-row: 1/7;
+          grid-row: 1/7;
     line-height: 3.6rem;
-    margin-left: 2rem;
-    margin: 0 0 0 2.5rem;
-    /* border-radius: 2em 1em 4em / 0.5em 3em; */
     text-align: center;
-    width: 330px;
     padding: 50px;
   }
   header .header-callout {
