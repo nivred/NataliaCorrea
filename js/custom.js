@@ -42,12 +42,12 @@ $(window).scroll(function () {
   });
   // When page ready - Add fade in/out with scroll when screen less than 960px - Else keep hidden
   $(document).ready(function () {
-    if ($(window).width() <= 960) {
+    if ($(window).width() < 1200) {
       $('nav #hamburger ~ label').hide();
       clearTimeout($.data(this, 'scrollTimer'));
       $.data(this, 'scrollTimer', setTimeout(function () {
         $('nav #hamburger ~ label').fadeIn();
-      }, 1000));
+      }, 600));
     } else {
       $('nav #hamburger ~ label').hide();
     }
@@ -66,12 +66,12 @@ $(window).scroll(function () {
   });
   // When screen is resized - Add fade in/out with scroll when screen less than 960px - Else keep hidden
   $(window).resize(function () {
-    if ($(window).width() <= 960) {
+    if ($(window).width() < 1200) {
       $('nav #hamburger ~ label').hide();
       clearTimeout($.data(this, 'scrollTimer'));
       $.data(this, 'scrollTimer', setTimeout(function () {
         $('nav #hamburger ~ label').fadeIn();
-      }, 1000));
+      }, 600));
     } else {
       $('nav #hamburger ~ label').hide();
     }
