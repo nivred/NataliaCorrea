@@ -75,7 +75,7 @@ html, body {
 hr {
   display: block;
   margin: 2rem auto;
-  width: 70%;
+  width: 80%;
 }
 @media screen and (min-width: 768px) {
   hr {
@@ -389,13 +389,18 @@ a.cta {
   -ms-flex-pack: center;
   justify-content: center;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 1rem 3rem;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   outline: none;
-  width: 60%;
+  max-width: 90%;
+}
+@media screen and (min-width: 768px) {
+  a.cta {
+    max-width: 25rem;
+  }
 }
 a.cta:hover {
   background-image: linear-gradient(to bottom,#FFFFFF, var(--insta1));
@@ -432,8 +437,9 @@ a.cta.secondary:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 2rem 0;
 }
 .accordions input {
   display: none;
@@ -752,7 +758,7 @@ header .intro {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-column: 1/13;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem;
   height: auto;
   grid-auto-rows: auto;
 }
@@ -835,7 +841,7 @@ header .intro .welcome {
   position: relative;
 }
 header .intro a.cta {
-  margin: 1rem auto 0.6rem;
+  margin: 2.5rem auto 0.6rem;
 }
 
 /* header .intro a.cta::after {
@@ -1736,6 +1742,7 @@ a.prev:hover, a.next:hover {
     margin-left: auto;
     margin-right: 0;
     width: 70%;
+    margin-top: 0;
   }
   /* --- end HOME --- */
   /* --- ABOUT --- */
@@ -1781,9 +1788,9 @@ a.prev:hover, a.next:hover {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin: 2rem 0 5rem;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 2rem 0 5rem 0;
     position: relative;
   }
   .accordions.tabbed .accordion-item {
