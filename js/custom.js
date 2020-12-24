@@ -302,8 +302,7 @@ feed.run();
 const DetectBrowser = function () {
   var isIE = false || !!document.documentMode;
   if (isIE) {
-    alert('This website does not support Internet Explorer. Please use another browser.');
-    window.location.assign("https://www.w3schools.com");
+    window.location.assign("http://nataliacorrea.com/not-supported");
   } else {
     return
   }
