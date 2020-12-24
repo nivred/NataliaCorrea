@@ -299,12 +299,17 @@ feed.run();
 
 
 // BROWSER DETECTION
-// const DetectBrowser = function () {
-//   var isIE = false || !!document.documentMode;
-//   return (
-  
-//   );
-// };
+const DetectBrowser = function () {
+  var isIE = false || !!document.documentMode;
+  if (isIE) {
+    alert('This website does not support Internet Explorer. Please use another browser.');
+    window.location.assign("https://www.w3schools.com");
+  } else {
+    return
+  }
+};
+
+DetectBrowser();
 
 
 
