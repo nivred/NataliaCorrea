@@ -298,6 +298,13 @@ feed.run();
 
 
 
+// BROWSER DETECTION
+// const DetectBrowser = function () {
+//   var isIE = false || !!document.documentMode;
+//   return (
+  
+//   );
+// };
 
 
 
