@@ -139,7 +139,6 @@ for (let i = 0; i < accInput.length; i++) {
   accInput[i].addEventListener('click', function () {
 
     if ($(this).parent().parent().hasClass('tabbed')) {
-
       $(this).parent().parent().each(function () {
         $('label', $(this)).each(function () {
           $(this).removeClass('select');
@@ -150,8 +149,6 @@ for (let i = 0; i < accInput.length; i++) {
       }); 
       $(this).next().addClass('select');
       $(this).next().next().addClass('show');
-    } else {
-      console.log($(this).parent().parent());
     }
 
     // hide content and unselect all accordion items

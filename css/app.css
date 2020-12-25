@@ -205,10 +205,10 @@ h2:after {
   }
 } */
 h3 {
-  color: var(--text);
+  color: var(--insta4);
   font-family: 'Open Sans', sans-serif;
   font-size: 1.65rem;
-  font-weight: bold;
+  font-weight: 500;
   line-height: .85rem;
   text-align: center;
 }
@@ -378,6 +378,7 @@ footer p {
 
 
 a.cta {
+  align-items: center;
   background-image: linear-gradient(to bottom,#FFFFFF, var(--insta1));
   border-radius: 45px;
   border-top: 1px solid gainsboro;
@@ -400,6 +401,13 @@ a.cta {
   outline: none;
   max-width: 90%;
 }
+a.cta.round {
+  align-items: center;
+  border-radius: 50%;
+  height: 50px; width: 50px;
+  margin: 0;
+  padding: 0;
+}
 @media screen and (min-width: 768px) {
   a.cta {
     max-width: 25rem;
@@ -413,6 +421,7 @@ a.cta:hover {
   text-decoration: none;
   transform: translateY(-5px);
 }
+
 .accordions {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -863,6 +872,13 @@ header .intro a.cta {
   margin: -8.5rem auto 0;
   -webkit-box-shadow: 2px 2px 5px rgb(75, 75, 75);
           box-shadow: 2px 2px 5px rgb(75, 75, 75);
+}
+.about-section .certifications {
+  display: flex;
+  justify-content: center;
+}
+.about-section .certifications a {
+  margin: 1rem;
 }
 /* --- end ABOUT --- */
 
