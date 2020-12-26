@@ -183,69 +183,85 @@ $(window).resize(function () {
 
 
 /* :::::::::::::::::: TESTIMONIALS - READ MORE :::::::::::::::::: */
+// window size when ready
 $(document).ready(function () {
-  if ($(window).width() > 768) {
-    console.log('> 768');
+  if ($(window).width() >= 768) { // for tablet and larger
     $('.testimonial-item .read-more').on('click', function () {
       $(this).parents('.testimonial-item').addClass('flip');
-      $(this).parents('.testimonial-item').css('height', '760px')
+      // $(this).parents('.testimonial-item').css('height', 'calc(100vh + 340px)');
+
+      var totalHeight = 0;
+
+      $(this).parents('.front').next().find('.client-testimonial').children().each(function () {
+        console.log($(this), 'this height');
+
+        totalHeight = totalHeight + $(this).outerHeight();
+        console.log($(this).outerHeight(true));
+      });
+
       $(this).parents().prev().find('.quotes').fadeOut();
       $(this).parents('.front').next().find('.client-testimonial').delay(800).fadeIn(400);
     });
     $('.testimonial-item .back-arrow').on('click', function () {
       $(this).parents('.testimonial-item').removeClass('flip');
-      $(this).parents('.testimonial-item').css('height', '490px')
+      $(this).parents('.testimonial-item').css('height', '450px')
       $(this).parent().prev().find('.quotes').fadeIn();
       $(this).next().next().hide();
     });
-  } else {
+  } else { // for mobile
     $('.testimonial-item .read-more').on('click', function () {
-      console.log('clicked');
-      console.log($(this).prev());
-      $(this).prev().addClass('extend');
+      $(this).parents('.front').hide(); // hide partial quote
+      $(this).parents('.front').next().css('display', 'block');
+        // show().delay(800).fadeIn(400); // show full quote
       $('a.prev').css('left', '-4rem');
       $('a.next').css('right', '-4rem');
-      $('.read-more').css('display', 'none');
-      $('.read-less').css('display', 'inline-block');
     });
     $('.testimonial-item .read-less').on('click', function () {
-      console.log($(this).prev());
-      $(this).prev().prev().removeClass('extend');
+      console.log($(this));
+      $(this).parents('.back').hide(); // hide partial quote
+      $(this).parents('.back').prev().css('display', 'block');
+      // $(this).parent().prev().find('.quotes').fadeIn();
+      // $(this).next().next().hide();
       $('a.prev').css('left', '-1rem');
       $('a.next').css('right', '-1rem');
-      $('.read-less').css('display', 'none');
-      $('.read-more').css('display', 'inline-block');
     });    
   }
 });
-
+// resized window
 $(window).resize(function () {
-  if ($(window).width() >= 768) {
+  if ($(window).width() >= 768) { // for tablet and larger
     console.log('> 768');
     $('.testimonial-item .read-more').on('click', function () {
       $(this).parents('.testimonial-item').addClass('flip');
-      $(this).parents('.testimonial-item').css('height', '760px')
+      $(this).parents('.testimonial-item').css('height', 'calc(100vh + 340px)');
       $(this).parents().prev().find('.quotes').fadeOut();
       $(this).parents('.front').next().find('.client-testimonial').delay(800).fadeIn(400);
     });
     $('.testimonial-item .back-arrow').on('click', function () {
       $(this).parents('.testimonial-item').removeClass('flip');
-      $(this).parents('.testimonial-item').css('height', '490px')
+      $(this).parents('.testimonial-item').css('height', '450px')
       $(this).parent().prev().find('.quotes').fadeIn();
       $(this).next().next().hide();
     });
-  } else {
+  } else { // for mobile
     $('.testimonial-item .read-more').on('click', function () {
-      $(this).parent('.client-testimonial').find('.part').addClass('extend');
+      $(this).parents('.front').hide(); // hide partial quote
+      $(this).parents('.front').next().css('display', 'block');
+      // show().delay(800).fadeIn(400); // show full quote
       $('a.prev').css('left', '-4rem');
       $('a.next').css('right', '-4rem');
     });
+    $('.testimonial-item .read-less').on('click', function () {
+      console.log($(this));
+      $(this).parents('.back').hide(); // hide partial quote
+      $(this).parents('.back').prev().css('display', 'block');
+      // $(this).parent().prev().find('.quotes').fadeIn();
+      // $(this).next().next().hide();
+      $('a.prev').css('left', '-1rem');
+      $('a.next').css('right', '-1rem');
+    });
   }
 });
-
-
-
-
 /* :::::::::::::::::: end TESTIMONIALS - READ MORE :::::::::::::::::: */
 
 
