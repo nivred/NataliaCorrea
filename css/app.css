@@ -536,9 +536,6 @@ nav {
   width: 100%;
   z-index: 100;
 }
-nav input {
-  display: none;
-}
 nav #hamburger ~ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -546,8 +543,7 @@ nav #hamburger ~ label {
   background-color: var(--insta5);
   border: 2px solid #FFFFFF;
   border-radius: 50%;
-  /* -webkit-box-shadow: 0 0px 15px rgba(54, 54, 54, .75);
-          box-shadow: 0 0px 15px rgba(54, 54, 54, .75); */
+  box-shadow: 0 0 20px rgba(70, 70, 70, 0.15);
   color: #FFFFFF;
   cursor: pointer;
   display: -webkit-box;
@@ -558,17 +554,68 @@ nav #hamburger ~ label {
   font-weight: 600;
   -ms-grid-column: 8;
   -ms-grid-column-span: 5;
-  grid-column: 9/13;
+  grid-column: 10/13;
   height: 4rem; width: 4rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  line-height: 4rem;
+  line-height: 3.9rem;
   position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
   z-index: 10;
   text-align: center;
+  transition: all .75s ease;
 }
+nav #hamburger:checked ~ label {
+  /* background-color: #FFFFFF;
+  border: 1px solid var(--insta5);
+  box-shadow: none;
+  color: var(--insta5);
+  font-size: .85rem;
+  -ms-grid-column: 10;
+  -ms-grid-column-span: 3;
+  grid-column: 10/13;
+  height: 2.5rem; width: 2.5rem; */
+}
+
+/* nav #hamburger:checked ~ label::after {
+  content: '\2715';
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: center;
+  line-height: 2.4rem;
+  bottom: initial;
+} */
+/* nav #hamburger:checked ~ label i {
+  display: none;
+} */
+
+.to-top::after {
+  border: 1px solid gainsboro;
+  background-image: linear-gradient(to left, #FFFFFF, var(--insta1));
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(70, 70, 70, 0.15);
+  color: rgb(200, 200, 200);
+  content: '\276F';
+  display: flex;
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+    bottom: 2rem;
+    right: -2px;
+  transform: translateX(-50%) rotate(-90deg);
+  transform-origin: center;
+  text-shadow: -1px 0 var(--text);
+  margin: auto;
+  padding: .5rem .5rem .5rem .9rem;
+  z-index: 900;
+  line-height: 2rem;
+}
+nav input {
+  display: none;
+}
+
 nav .menu {
   background-color: #FFFFFF;
   border-radius: 25px;
@@ -579,32 +626,7 @@ nav .menu {
   position: absolute;
     bottom: 0;
   text-align: center;
-}
-nav .menu li a {
-  color: var(--insta4);
-  line-height: 3rem;
-}
-nav .menu a.espanol {
-  border: none;
-  padding: 0;
-}
-nav #hamburger:checked ~ label {
-  font-size: .85rem;
-  -ms-grid-column: 10;
-  -ms-grid-column-span: 3;
-  grid-column: 10/13;
-  height: 3rem; width: 3rem;
-}
-nav #hamburger:checked ~ label i {
-  display: none;
-}
-nav #hamburger:checked ~ label::after {
-  content: '\2715';
-  display: flex;
-  font-size: 1.5rem;
-  /* height: 2rem; width: 2rem; */
-  /* background-color: yellow; */
-
+  z-index: 500;
 }
 nav input:checked + label + .menu {
   display: -webkit-box;
@@ -614,6 +636,22 @@ nav input:checked + label + .menu {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+nav .menu li a {
+  color: var(--insta4);
+  line-height: 3rem;
+}
+nav .menu a.espanol {
+  border: none;
+  padding: 0;
+}
+nav .menu i {
+  font-size: 2rem;
+  color: var(--insta5);
+  display: inline;
+  /* background: yellow; */
+  text-align: right;
+  padding-right: 20px; 
 }
 /* --- end NAVIGATION --- */
 /* --- HOME --- */
@@ -658,13 +696,13 @@ header .title {
 .home-section .banner-img img {
   -o-object-fit: none;
      object-fit: none;
-  -o-object-position: -330px -150px;
-     object-position: -330px -150px;
+  -o-object-position: -310px -150px;
+     object-position: -310px -150px;
 }
 @media screen and (min-width: 576px) {
   .home-section .banner-img img {
-  -o-object-position: -200px -150px;
-     object-position: -200px -150px;
+  -o-object-position: -130px -150px;
+     object-position: -130px -150px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -887,6 +925,7 @@ header .intro a.cta {
 .slideshow-container {
   margin-top: 1rem;
 }
+span.fa-stack { display: none;}
 .testimonial-item .front-content,
 .testimonial-item .back-content {
   display: flex;
@@ -1160,7 +1199,7 @@ q {font-style: italic;}
   .grid {
     grid-auto-rows: 50px auto;
   }
-  nav #hamburger ~ label {
+  /* nav #hamburger ~ label {
     -ms-grid-column: 10;
     -ms-grid-column-span: 3;
     grid-column: 10/13;
@@ -1173,7 +1212,7 @@ q {font-style: italic;}
     position: absolute;
     bottom: 1rem;
     z-index: 100;
-  }
+  } */
   header .title {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
@@ -1286,9 +1325,31 @@ q {font-style: italic;}
     border-radius: 15px;
     box-shadow: 1px 1px 5px 0px #A8A8A8;
     margin: 5rem auto 0;
-    padding: 5rem 1.5rem 2rem;
+    padding: 1.5rem;
     width: 450px;
     position: relative;
+    transition: all 1s ease-in;
+  }
+  .testimonial-item .front {
+    margin-top: 7rem;
+  }
+  .testimonial-item .back {
+    margin-top: 0;
+  }
+  span.fa-stack {
+    color: var(--insta3);
+    display: flex;
+    font-size: 2.5rem; 
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    vertical-align: top;
+        text-shadow: 0px 1px rgb(75, 75, 75);
+
+  }
+  i.fas.fa-heart {
+    margin-top: -5px;
   }
   .quotes::before {
     color: var(--insta2);
@@ -1296,9 +1357,11 @@ q {font-style: italic;}
     font-size: 15rem;
     height: 1px;
     position: absolute;
-      left: 3rem;
-      top: -105px;
-    text-shadow: 1px 1px 4px rgba(75, 75, 75, .5);
+      left: 2rem;
+      top: -90px;
+    /* text-shadow: 1px 1px 4px rgba(75, 75, 75, .5); */
+        text-shadow: 0px 1px rgb(75, 75, 75);
+
     z-index: 1;
   }
   .quotes::after {
@@ -1307,14 +1370,18 @@ q {font-style: italic;}
     font-size: 15rem;
     height: 1px;
     position: absolute;
-      right: 3rem;
-      top: -105px;
-    text-shadow: 1px 1px 4px rgba(75, 75, 75, 0.5);
+      right: 2rem;
+      top: -90px;
+    /* text-shadow: 1px 1px 4px rgba(75, 75, 75, 0.5); */
+            text-shadow: 0px 1px rgb(75, 75, 75);
+
     z-index: 1;
   }
-
+  .testimonial-item a {
+    cursor: pointer;
+  }
   .dot-container {
-    margin-bottom: 4rem;
+    margin: 1rem 0 4rem;
     /* position: absolute; */
     /* bottom: 0; */
     /* background-color: yellow; */

@@ -1,3 +1,23 @@
+$('.to-top').hide().fadeOut(0);
+
+$(document).ready(function () {
+
+  $('nav .menu i').on('click', function () {
+    $('nav .menu').css('display', 'none');
+    $('#hamburger').prop('checked', '');
+  });
+
+  $('#hamburger').on('click', function () {
+    $('nav .menu').css('display', 'flex');
+  });
+
+  $('.to-top').on('click', function () {
+    $('.to-top').fadeOut();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  });
+});
+
 /* :::::::::::::::::: SCROLL ANIMATION :::::::::::::::::: */
 $(window).scroll(function () {
   $('.animate').each(function () {
@@ -40,56 +60,54 @@ $(window).scroll(function () {
       return
     }
   });
-  // When page ready - Add fade in/out with scroll when screen less than 960px - Else keep hidden
-  $(document).ready(function () {
-    if ($(window).width() < 1200) {
-      $('nav #hamburger ~ label').hide();
-      clearTimeout($.data(this, 'scrollTimer'));
-      $.data(this, 'scrollTimer', setTimeout(function () {
-        $('nav #hamburger ~ label').fadeIn();
-      }, 600));
+  // When page ready - Add fade in/out with scroll when screen less than 1200px - Else keep hidden
+  // $(document).ready(function () {
+  //   $('nav #hamburger ~ label').hide();
+  //   if ($(window).width() < 1200) {
+  //     clearTimeout($.data(this, 'scrollTimer'));
+  //     $.data(this, 'scrollTimer', setTimeout(function () {
+  //       $('nav #hamburger ~ label').fadeIn();
+  //     }, 200));
+  //   } else {
+  //     $('nav #hamburger ~ label').hide();
+  //   }
+  //   // if orientation changes to landscape change menu position
+  //   if (window.matchMedia("(orientation: landscape)").matches) {
+  //     $('nav #hamburger ~ label').css('grid-column', '11/13');
+  //   } else {
+  //     $('nav #hamburger ~ label').css('grid-column', '10/13');
+  //   }
+  // });
+  // When screen is resized - Add fade in/out with scroll when screen less than 1200px - Else keep hidden
+  // $(window).resize(function () {
+  //   $('nav #hamburger ~ label').hide();
+  //   if ($(window).width() < 1200) {
+  //     clearTimeout($.data(this, 'scrollTimer'));
+  //     $.data(this, 'scrollTimer', setTimeout(function () {
+  //       $('nav #hamburger ~ label').fadeIn();
+  //     }, 600));
+  //   } else {
+  //     $('nav #hamburger ~ label').hide();
+  //   }
+  //   // if orientation changes to landscape change menu position
+  //   if (window.matchMedia("(orientation: landscape)").matches) {
+  //     $('nav #hamburger ~ label').css('grid-column', '11/13');
+  //   } else {
+  //     $('nav #hamburger ~ label').css('grid-column', '10/13');
+  //   }
+  // });
+
+  // Show BACK TO TOP button on scroll location
+  $(window).scroll(function () {
+    if ($(window).scrollTop() + $(window).height() >= ($(document).height() / 3.25)) {
+      $('.to-top').fadeIn(1000);
+      $('nav #hamburger ~ label').css('bottom', '4rem');
     } else {
-      $('nav #hamburger ~ label').hide();
-    }
-    // if orientation changes to landscape change menu position
-    if (window.matchMedia("(orientation: landscape)").matches) {
-      $('nav #hamburger ~ label').css({
-        'grid-column': '11/13',
-        'bottom': '0'
-      });
-    } else {
-      $('nav #hamburger ~ label').css({
-        'grid-column': '9/13',
-        'bottom': '1rem'
-      });
-    }
-  });
-  // When screen is resized - Add fade in/out with scroll when screen less than 960px - Else keep hidden
-  $(window).resize(function () {
-    if ($(window).width() < 1200) {
-      $('nav #hamburger ~ label').hide();
-      clearTimeout($.data(this, 'scrollTimer'));
-      $.data(this, 'scrollTimer', setTimeout(function () {
-        $('nav #hamburger ~ label').fadeIn();
-      }, 600));
-    } else {
-      $('nav #hamburger ~ label').hide();
-    }
-    // if orientation changes to landscape change menu position
-    if (window.matchMedia("(orientation: landscape)").matches) {
-      // you're in LANDSCAPE mode
-      console.log('LANDSCAPE')
-      $('nav #hamburger ~ label').css({
-        'grid-column': '11/13',
-        'bottom': '0'
-      });
-    } else {
-      $('nav #hamburger ~ label').css({
-        'grid-column': '9/13',
-        'bottom': '1rem'
-      });
+      $('.to-top').fadeOut();
+      $('nav #hamburger ~ label').css('bottom', '1rem');
     }
   });
+
 
   // if (window.matchMedia("(orientation: portrait)").matches) {
   //   // you're in PORTRAIT mode
@@ -108,6 +126,7 @@ $(window).scroll(function () {
   // });
 });
 /* :::::::::::::::::: end SCROLL ANIMATION :::::::::::::::::: */
+
 
 
 /* :::::::::::::::::: SMOOTH SCROLL :::::::::::::::::: */
@@ -231,6 +250,9 @@ $(window).resize(function () {
       $(this).parents('.front').hide(); // hide partial quote
       $(this).parents('.front').next().css('display', 'block');
       // show().delay(800).fadeIn(400); // show full quote
+      $('a.prev').css('left', '23rem');
+      $('a.next').css('right', '23rem');
+
     });
     $('.testimonial-item .read-less').on('click', function () {
       console.log($(this));
