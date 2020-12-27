@@ -10,10 +10,31 @@ $(document).ready(function () {
   });
   // when to-top button clicked move to top of document
   $('.to-top').on('click', function () {
-    $('.to-top').fadeOut(400);
+    $('.to-top').fadeOut();
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return false;
   });
+});
+
+$(document).ready(function () {
+  if ($(window).scrollTop() > ($('#about').offset().top + 300 - $(window).height())) {
+    $('.to-top').addClass('fade-in');
+    $('nav #hamburger ~ label').css('bottom', '4rem');
+  } else {
+    $('.to-top').removeClass('fade-in');
+    $('nav #hamburger ~ label').css('bottom', '1rem');
+  }
+});
+
+$(window).scroll(function () {
+  // Show BACK TO TOP button based on element variable
+  if ($(window).scrollTop() > ($('#about').offset().top + 300 - $(window).height())) {
+    $('.to-top').addClass('fade-in');
+    $('nav #hamburger ~ label').css('bottom', '4rem');
+  } else {
+    $('.to-top').removeClass('fade-in');
+    $('nav #hamburger ~ label').css('bottom', '1rem');
+  }
 });
 
 /* :::::::::::::::::: SCROLL ANIMATION :::::::::::::::::: */
@@ -58,16 +79,7 @@ $(window).scroll(function () {
       return
     }
 
-    $(window).scroll(function () {
-      // Show BACK TO TOP button based on element variable
-      if ($(window).scrollTop() > ($('#about').offset().top + 300 - $(window).height())) {
-        $('.to-top').addClass('fade-in');
-        $('nav #hamburger ~ label').css('bottom', '4rem');
-      } else {
-        $('.to-top').removeClass('fade-in');
-        $('nav #hamburger ~ label').css('bottom', '1rem');
-      }
-    });
+
   });
   // When page ready - Add fade in/out with scroll when screen less than 1200px - Else keep hidden
   // $(document).ready(function () {

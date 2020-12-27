@@ -589,34 +589,51 @@ nav #hamburger:checked ~ label {
 /* nav #hamburger:checked ~ label i {
   display: none;
 } */
+.position-fixed {
+  display: block;
+  margin: auto;
+  position: fixed;
+    bottom: 2rem;
+    left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.top-btn {
+  display: grid;
+  width: 100%;
+}
 .to-top {
   align-items: center;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--insta5);
   background-image: linear-gradient(to left, #FFFFFF, var(--insta1));
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(70, 70, 70, 0.15);
-
   display: flex;
   font-size: 2rem;
   line-height: 2rem;
-  grid-column: 22/23;
   justify-content: center;
-
   height: 50px;
   width: 50px;
-  position: fixed;
-  bottom: 2rem;
-  right: 0;
+  position: sticky;
+    bottom: 2rem;
   transform: translateX(-50%) rotate(-90deg);
   transform-origin: center;
-
   color: var(--insta5);
+      grid-column: 22/24;
+
+      z-index: 10;
 }
 @media screen and (min-width: 1200px) {
-  .to-top {
+  .top-btn {
+    display: grid;
+    margin: auto;
+    width: 1200px;
+  }
+  .top-top {
     grid-column: 25/26;
   }
 }
+
 .to-top::after {
   /* color: rgb(200, 200, 200);
   content: '\276F';
