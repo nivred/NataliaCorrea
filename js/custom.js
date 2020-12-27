@@ -1,6 +1,3 @@
-$('.to-top').hide(0).fadeOut(0);
-
-
 $(document).ready(function () {
   // when hamburger clicked close menu
   $('nav .menu i').on('click', function () {
@@ -64,10 +61,10 @@ $(window).scroll(function () {
     $(window).scroll(function () {
       // Show BACK TO TOP button based on element variable
       if ($(window).scrollTop() > ($('#about').offset().top + 300 - $(window).height())) {
-        $('.to-top').fadeIn(1000);
+        $('.to-top').addClass('fade-in');
         $('nav #hamburger ~ label').css('bottom', '4rem');
       } else {
-        $('.to-top').fadeOut();
+        $('.to-top').removeClass('fade-in');
         $('nav #hamburger ~ label').css('bottom', '1rem');
       }
     });

@@ -589,7 +589,14 @@ nav #hamburger:checked ~ label {
 /* nav #hamburger:checked ~ label i {
   display: none;
 } */
-
+.to-top {
+  grid-column: 22/23;
+}
+@media screen and (min-width: 1200px) {
+  .to-top {
+    grid-column: 25/26;
+  }
+}
 .to-top::after {
   align-items: center;
   border: 1px solid gainsboro;
@@ -600,6 +607,7 @@ nav #hamburger:checked ~ label {
   content: '\276F';
   display: flex;
   font-size: 2rem;
+  grid-column: 10/13;
   height: 50px;
   width: 50px;
   justify-content: center;
@@ -607,12 +615,11 @@ nav #hamburger:checked ~ label {
   margin: auto;
   position: fixed;
     bottom: 2rem;
-    right: 0;
+    /* right: 0; */
   transform: translateX(-50%) rotate(-90deg);
   transform-origin: center;
   text-shadow: -1px 0 var(--text);
   z-index: 10;
-  visibility: none;
 }
 nav input {
   display: none;
