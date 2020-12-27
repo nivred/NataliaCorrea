@@ -611,11 +611,10 @@ nav #hamburger:checked ~ label {
   height: 50px;
   width: 50px;
   justify-content: center;
-  line-height: 2rem;
+  line-height: 1.8rem;
   margin: auto;
   position: fixed;
     bottom: 2rem;
-    /* right: 0; */
   transform: translateX(-50%) rotate(-90deg);
   transform-origin: center;
   text-shadow: -1px 0 var(--text);
@@ -1343,7 +1342,7 @@ q {font-style: italic;}
     transition: all 1s ease-in;
   }
   .testimonial-item .front {
-    margin-top: 7rem;
+    margin-top: 5rem;
   }
   .testimonial-item .back {
     margin-top: 0;
@@ -1366,10 +1365,10 @@ q {font-style: italic;}
   .quotes::before {
     color: var(--insta2);
     content: '\275D';
-    font-size: 15rem;
+    font-size: 230px;
     height: 1px;
     position: absolute;
-      left: 2rem;
+      left: 3rem;
       top: -90px;
     /* text-shadow: 1px 1px 4px rgba(75, 75, 75, .5); */
         text-shadow: 0px 1px rgb(75, 75, 75);
@@ -1379,10 +1378,10 @@ q {font-style: italic;}
   .quotes::after {
     color: var(--insta2);
     content: '\275E';
-    font-size: 15rem;
+    font-size: 230px;
     height: 1px;
     position: absolute;
-      right: 2rem;
+      right: 3rem;
       top: -90px;
     /* text-shadow: 1px 1px 4px rgba(75, 75, 75, 0.5); */
             text-shadow: 0px 1px rgb(75, 75, 75);
