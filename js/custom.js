@@ -1,18 +1,19 @@
-$('.to-top').hide().fadeOut(0);
+$('.to-top').hide(0).fadeOut(0);
+
 
 $(document).ready(function () {
-
+  // when hamburger clicked close menu
   $('nav .menu i').on('click', function () {
     $('nav .menu').css('display', 'none');
     $('#hamburger').prop('checked', '');
   });
-
+  // when hamburger clicked open menu
   $('#hamburger').on('click', function () {
     $('nav .menu').css('display', 'flex');
   });
-
+  // when to-top button clicked move to top of document
   $('.to-top').on('click', function () {
-    $('.to-top').fadeOut();
+    $('.to-top').fadeOut(400);
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return false;
   });
@@ -59,6 +60,17 @@ $(window).scroll(function () {
       //take away class
       return
     }
+
+    $(window).scroll(function () {
+      // Show BACK TO TOP button based on element variable
+      if ($(window).scrollTop() > ($('#about').offset().top + 300 - $(window).height())) {
+        $('.to-top').fadeIn(1000);
+        $('nav #hamburger ~ label').css('bottom', '4rem');
+      } else {
+        $('.to-top').fadeOut();
+        $('nav #hamburger ~ label').css('bottom', '1rem');
+      }
+    });
   });
   // When page ready - Add fade in/out with scroll when screen less than 1200px - Else keep hidden
   // $(document).ready(function () {
@@ -97,16 +109,7 @@ $(window).scroll(function () {
   //   }
   // });
 
-  // Show BACK TO TOP button on scroll location
-  $(window).scroll(function () {
-    if ($(window).scrollTop() + $(window).height() >= ($(document).height() / 3.25)) {
-      $('.to-top').fadeIn(1000);
-      $('nav #hamburger ~ label').css('bottom', '4rem');
-    } else {
-      $('.to-top').fadeOut();
-      $('nav #hamburger ~ label').css('bottom', '1rem');
-    }
-  });
+
 
 
   // if (window.matchMedia("(orientation: portrait)").matches) {
@@ -318,6 +321,18 @@ function showSlides(n) {
 }
 /* :::::::::::::::::: end CAROUSEL - FOR TESTIMONIALS :::::::::::::::::: */
 
+/* :::::::::::::::::: BROWSER DETECTION :::::::::::::::::: */
+const DetectBrowser = function () {
+  var isIE = false || !!document.documentMode;
+  if (isIE) {
+    window.location.assign("http://nataliacorrea.com/not-supported");
+  } else {
+    return
+  }
+};
+
+DetectBrowser();
+/* :::::::::::::::::: end BROWSER DETECTION :::::::::::::::::: */
 
 /* :::::::::::::::::: INSTAFEED - DYNAMIC DISPLAY OF INSTAGRAM FEED :::::::::::::::::: */
 var feed = new Instafeed({
@@ -332,25 +347,7 @@ feed.run();
 /* :::::::::::::::::: end INSTAFEED - DYNAMIC DISPLAY OF INSTAGRAM FEED :::::::::::::::::: */
 
 
-
-
-
-/* :::::::::::::::::: BROWSER DETECTION :::::::::::::::::: */
-const DetectBrowser = function () {
-  var isIE = false || !!document.documentMode;
-  if (isIE) {
-    window.location.assign("http://nataliacorrea.com/not-supported");
-  } else {
-    return
-  }
-};
-
-DetectBrowser();
-/* :::::::::::::::::: end BROWSER DETECTION :::::::::::::::::: */
-
-
-
-/* :::::::::::::::::: INSTAGRAM FEED :::::::::::::::::: */
+/* :::::::::::::::::: FACEBOOK ADD/SHARE :::::::::::::::::: */
   window.fbAsyncInit = function () {
     FB.init({
       appId: '1051014145379075',
@@ -367,7 +364,7 @@ DetectBrowser();
       js.src = "https://connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-/* :::::::::::::::::: end INSTAGRAM FEED :::::::::::::::::: */
+/* :::::::::::::::::: end FACEBOOK ADD/SHARE :::::::::::::::::: */
 
 
 
