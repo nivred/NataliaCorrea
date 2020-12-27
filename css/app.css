@@ -590,7 +590,27 @@ nav #hamburger:checked ~ label {
   display: none;
 } */
 .to-top {
+  align-items: center;
+  border: 1px solid gainsboro;
+  background-image: linear-gradient(to left, #FFFFFF, var(--insta1));
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(70, 70, 70, 0.15);
+
+  display: flex;
+  font-size: 2rem;
+  line-height: 2rem;
   grid-column: 22/23;
+  justify-content: center;
+
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 2rem;
+  right: 0;
+  transform: translateX(-50%) rotate(-90deg);
+  transform-origin: center;
+
+  color: var(--insta5);
 }
 @media screen and (min-width: 1200px) {
   .to-top {
@@ -598,27 +618,17 @@ nav #hamburger:checked ~ label {
   }
 }
 .to-top::after {
-  align-items: center;
-  border: 1px solid gainsboro;
-  background-image: linear-gradient(to left, #FFFFFF, var(--insta1));
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(70, 70, 70, 0.15);
-  color: rgb(200, 200, 200);
+  /* color: rgb(200, 200, 200);
   content: '\276F';
-  display: flex;
   font-size: 2rem;
   grid-column: 10/13;
-  height: 50px;
-  width: 50px;
-  justify-content: center;
   line-height: 1.8rem;
-  margin: auto;
   position: fixed;
     bottom: 2rem;
   transform: translateX(-50%) rotate(-90deg);
   transform-origin: center;
   text-shadow: -1px 0 var(--text);
-  z-index: 10;
+  z-index: 10; */
 }
 nav input {
   display: none;
