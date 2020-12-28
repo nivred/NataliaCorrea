@@ -576,12 +576,6 @@ nav #hamburger ~ label {
   bottom: 1rem;
   transition: all 1s ease;
 }
-@media screen and (min-width: 1200px) {
-  #top-btn {
-    z-index: -1;
-  }
-}
-
 .btn-fixed {
   display: flex;
   justify-content: center;
@@ -833,15 +827,20 @@ header .intro p {
 }
 .highlight {
   color: var(--insta4);
-  background-image: -webkit-gradient(linear, left top, right top, from(var(--insta1)), color-stop(85%, rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.25)));
-  background-image: -o-linear-gradient(left, var(--insta1) 0%, rgba(255, 255, 255, 0.4) 85%, rgba(255, 255, 255, 0.25) 100%);
-  background-image: linear-gradient(to right, var(--insta1) 0%, rgba(255, 255, 255, 0.4) 85%, rgba(255, 255, 255, 0.25) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--insta5)), to(#fad4ce));
+  background-image: -o-linear-gradient(left, var(--insta5), #fad4ce);
+  background-image: linear-gradient(to right, var(--insta5), #fad4ce);
   border-radius: 2em 1em 4em / 0.5em 3em;
   margin-left: -10px;
   margin-right: -8px;
   padding: 0 10px 5px;
   text-shadow: none;
 }
+.highlight a,
+.highlight a:hover {
+  color: #FFFFFF;
+}
+
 .intro p .highlight:hover {
   color: var(--insta5);
 }
