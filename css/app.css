@@ -574,6 +574,7 @@ nav #hamburger ~ label {
 }
 #top-btn {
   bottom: 1rem;
+  transition: all 1s ease;
 }
 .btn-fixed {
   display: flex;

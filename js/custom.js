@@ -27,16 +27,6 @@ $(document).ready(function () {
   }
 });
 
-$(window).scroll(function () {
-  // Show BACK TO TOP button based on element variable
-  if ($(window).scrollTop() > ($('#about').offset().top + 300 - $(window).height())) {
-    $('.to-top').addClass('fade-in');
-    $('#nav-btn').css('bottom', '4rem');
-  } else {
-    $('.to-top').removeClass('fade-in');
-    $('#nav-btn').css('bottom', '1rem');
-  }
-});
 
 $(document).ready(function () {
   if ($(window).width() >= 1200) {
@@ -54,6 +44,27 @@ $(window).resize(function () {
   } else {
     $('nav .menu').css('display', 'none');
     $('nav #hamburger ~ label').prop('checked', '');
+  }
+});
+
+$(window).scroll(function () {
+  // Show BACK TO TOP button based on element variable
+  if ($(window).scrollTop() > ($('#about').offset().top + 300 - $(window).height())) {
+    $('.to-top').addClass('fade-in');
+    $('#nav-btn').css('bottom', '4rem');
+  } else {
+    $('.to-top').removeClass('fade-in');
+    $('#nav-btn').css('bottom', '1rem');
+  }
+});
+// Animate to-top button when reaching bottom of document
+$(window).scroll(function () {
+  if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+    console.log('at bottom');
+    $('#top-btn').css('bottom', "10rem");
+  } else if ($(window).scrollTop() + $(window).height() != $(document).height()) {
+    console.log('not at bottom');
+    $('#top-btn').css('bottom', "1rem");
   }
 });
 /* :::::::::::::::::: SCROLL ANIMATION :::::::::::::::::: */
@@ -150,11 +161,7 @@ $(window).scroll(function () {
   //   console.log('LANDSCAPE')
   // }
 
-  // $(window).scroll(function () {
-  //   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-  //    DO SOMETHING WHEN BOTTOM IS REACHED
-  //   }
-  // });
+
 });
 /* :::::::::::::::::: end SCROLL ANIMATION :::::::::::::::::: */
 
