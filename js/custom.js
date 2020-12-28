@@ -172,6 +172,8 @@ $('.scroll').on('click', function () {
   }, 1500, 'swing', function () { // length of duration (1.5 seconds) with 'swing' effect
     window.location.hash = target; // show hash target in URL for accessibility
   });
+  $('nav .menu').css('display', 'none');
+  $('nav #hamburger ~ label').prop('checked', '');
 });
 /* :::::::::::::::::: end SMOOTH SCROLL :::::::::::::::::: */
 
