@@ -60,10 +60,8 @@ $(window).scroll(function () {
 // Animate to-top button when reaching bottom of document
 $(window).scroll(function () {
   if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-    console.log('at bottom');
     $('#top-btn').css('bottom', "10rem");
   } else if ($(window).scrollTop() + $(window).height() != $(document).height()) {
-    console.log('not at bottom');
     $('#top-btn').css('bottom', "1rem");
   }
 });
