@@ -576,6 +576,12 @@ nav #hamburger ~ label {
   bottom: 1rem;
   transition: all 1s ease;
 }
+@media screen and (min-width: 1200px) {
+  #top-btn {
+    z-index: -1;
+  }
+}
+
 .btn-fixed {
   display: flex;
   justify-content: center;
