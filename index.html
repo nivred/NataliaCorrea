@@ -29,12 +29,23 @@
 <body>
 
   <div class="main-container">
+    <div id="top-btn" class="btn-fixed">
+      <div class="btn-grid">
+        <span class="to-top hide">&#10095;</span>
+      </div>
+    </div>
     <nav class="navigation">
-      <input type="checkbox" id="hamburger" />
-      <label for="hamburger">
-        <span class="sr-only">Menu</span>
-        <i class="fas fa-bars"></i>
-      </label>
+
+    <div id="nav-btn" class="btn-fixed">
+      <div class="btn-grid">
+        <input type="checkbox" id="hamburger" />
+        <label for="hamburger">
+          <span class="sr-only">Menu</span>
+          <i class="fas fa-bars"></i>
+        </label>
+      </div>
+    </div>
+
       <ul class="menu">
         <i class="far fa-times-circle"></i>
         <li><a href="#home" class="scroll" data-offset="150"><span>Home</span></a></li>
@@ -47,11 +58,7 @@
       </ul>
     </nav>
 
-    <div id="top" class="position-fixed">
-      <div class="top-btn grid">
-        <span class="to-top hide">&#10095;</span>
-      </div>
-    </div>
+
     
       <header id="home" class="home-section">
         <div class="item-container">
