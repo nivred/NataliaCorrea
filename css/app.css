@@ -436,7 +436,6 @@ a.cta:hover {
   display: none;
 }
 .accordions label {
-  /* color: #FFF; */
   background: var(--insta1);
   border-bottom: 1px solid var(--insta4);
   border-top-left-radius: 5px;
@@ -447,9 +446,9 @@ a.cta:hover {
   margin: 0 0 1px 0;
   padding: 8px 45px 8px 1rem;
   position: relative;
-  -webkit-transition: ease .5s;
-  -o-transition: ease .5s;
-  transition: ease .5s;
+  -webkit-transition: all .5s ease ;
+  -o-transition: all .5s ease ;
+  transition: all .5s ease;
 }
 .accordions label:hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(var(--insta1)), color-stop(80%, var(--insta2)));
@@ -596,16 +595,20 @@ nav #hamburger ~ label {
   cursor: pointer;
   display: flex;
   font-size: 2rem;
-  line-height: 2rem;
+  grid-column: 23/24;
+  grid-row: 2;
   justify-content: center;
   height: 50px;
   width: 50px;
+  line-height: 2rem;
   margin: 0;
   transform: rotate(-90deg);
   transform-origin: center;
-  grid-column: 22/25;
-  grid-row: 2;
+  transition: all .5s ease;
   z-index: 10;
+}
+.to-top:hover {
+  height: 60px; width: 60px;
 }
 @media screen and (min-width: 1200px) {
   .btn-fixed {
@@ -1402,8 +1405,19 @@ q {font-style: italic;}
 
     z-index: 1;
   }
-  .testimonial-item a {
+  .testimonial-item a.read-more, .testimonial-item a.read-less {
     cursor: pointer;
+    background-color: var(--insta2);
+    border: 1px solid var(--text);
+    border-radius: 45px;
+    padding: .75rem 2.5rem;
+    outline: none;
+    font-weight: 600;
+    color: var(--insta4);
+    transition: all .5s ease;
+  }
+  .testimonial-item a.read-more:hover, .testimonial-item a.read-less:hover {
+    color: var(--text);
   }
   .dot-container {
     margin: 1rem 0 4rem;
@@ -1696,7 +1710,7 @@ q {font-style: italic;}
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background: var(--insta1);
+    background-image: var(--insta1);
     border-bottom: 1px solid var(--insta4);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -1711,9 +1725,9 @@ q {font-style: italic;}
     min-height: 8.5rem;
     padding: 24px 22px;
     position: relative;
-    -webkit-transition: ease .5s;
-    -o-transition: ease .5s;
-    transition: ease .5s;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
   }
   .accordions.tabbed label:hover {
     background-image: -webkit-gradient(linear, left top, left bottom, from(var(--insta1)), color-stop(80%, var(--insta2)));
