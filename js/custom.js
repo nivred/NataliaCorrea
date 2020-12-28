@@ -38,6 +38,24 @@ $(window).scroll(function () {
   }
 });
 
+$(document).ready(function () {
+  if ($(window).width() >= 1200) {
+    $('nav .menu').css('display', 'flex');
+    $('nav #hamburger ~ label').prop('checked', '');
+  } else {
+    $('nav .menu').css('display', 'none');
+    $('nav #hamburger ~ label').prop('checked', '');
+  }
+});
+$(window).resize(function () {
+  if ($(window).width() >= 1200) {
+    $('nav .menu').css('display', 'flex');
+    $('nav #hamburger ~ label').prop('checked', '');
+  } else {
+    $('nav .menu').css('display', 'none');
+    $('nav #hamburger ~ label').prop('checked', '');
+  }
+});
 /* :::::::::::::::::: SCROLL ANIMATION :::::::::::::::::: */
 $(window).scroll(function () {
   $('.animate').each(function () {
