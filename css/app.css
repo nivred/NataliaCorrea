@@ -986,6 +986,7 @@ span.fa-stack { display: none;}
 }
 .testimonial-item a.read-more,
 .testimonial-item a.read-less {
+  color: var(--text);
   display: inline-block;
   border: 1px solid var(--insta2);
   margin: 0 auto;
@@ -994,6 +995,11 @@ span.fa-stack { display: none;}
   font-weight: 600;
   position: relative;
   width: fit-content
+}
+.testimonial-item a.read-more:hover,
+.testimonial-item a.read-less:hover {
+  color: initial;
+  text-decoration: none;
 }
 .client-name {
   margin: 1.5rem 0 0;
