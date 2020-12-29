@@ -373,21 +373,21 @@ feed.run();
 /* :::::::::::::::::: end INSTAFEED - DYNAMIC DISPLAY OF INSTAGRAM FEED :::::::::::::::::: */
 
 
-/* :::::::::::::::::: FACEBOOK ADD/SHARE :::::::::::::::::: */
-  window.fbAsyncInit = function () {
-    FB.init({
-      appId: '1051014145379075',
-      xfbml: true,
-      version: 'v9.0'
-    });
-      FB.AppEvents.logPageView();
-    };
+// /* :::::::::::::::::: FACEBOOK ADD/SHARE :::::::::::::::::: */
+//   window.fbAsyncInit = function () {
+//     FB.init({
+//       appId: '1051014145379075',
+//       xfbml: true,
+//       version: 'v9.0'
+//     });
+//       FB.AppEvents.logPageView();
+//     };
 
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-/* :::::::::::::::::: end FACEBOOK ADD/SHARE :::::::::::::::::: */
+//     (function (d, s, id) {
+//       var js, fjs = d.getElementsByTagName(s)[0];
+//       if (d.getElementById(id)) { return; }
+//       js = d.createElement(s); js.id = id;
+//       js.src = "https://connect.facebook.net/en_US/sdk.js";
+//       fjs.parentNode.insertBefore(js, fjs);
+//     }(document, 'script', 'facebook-jssdk'));
+// /* :::::::::::::::::: end FACEBOOK ADD/SHARE :::::::::::::::::: */

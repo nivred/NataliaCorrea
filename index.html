@@ -11,6 +11,26 @@
 
     gtag('config', 'G-Z0H66XFXBZ');
   </script>
+  <script>
+    /* :::::::::::::::::: FACEBOOK ADD/SHARE :::::::::::::::::: */
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '1051014145379075',
+        xfbml: true,
+        version: 'v9.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    /* :::::::::::::::::: end FACEBOOK ADD/SHARE :::::::::::::::::: */
+  </script>
 
   <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
 
@@ -33,7 +53,7 @@
 
   <link rel="stylesheet" href="css/app.css">
 
-  <script src="https://kit.fontawesome.com/9ba4d583d5.js" crossorigin="anonymous"></script>
+  < src="https://kit.fontawesome.com/9ba4d583d5.js" crossorigin="anonymous"></>
 
 </head>
 
@@ -530,7 +550,6 @@
     crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="./js/instafeed.js"></script>
-    <script type="text/javascript" src="./js/modernizer.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
 
 </body>
