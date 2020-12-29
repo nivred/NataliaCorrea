@@ -45,36 +45,6 @@
 </head>
 
 <body>
-
-  <script>
-    /* :::::::::::::::::: FACEBOOK ADD/SHARE :::::::::::::::::: */
-    window.fbAsyncInit = function () {
-      FB.init({
-        appId: '1051014145379075',
-        autoLogAppEvents: true,
-        status: true,
-        xfbml: true,
-        version: 'v9.0'
-      });
-      FB.AppEvents.logPageView();
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    FB.ui({
-      method: 'share',
-      href: 'https://developers.facebook.com/docs/'
-    }, function (response) { });
-
-    /* :::::::::::::::::: end FACEBOOK ADD/SHARE :::::::::::::::::: */
-  </script>
-
   <div class="main-container">
     <div id="top-btn" class="btn-fixed">
       <div class="btn-grid">
@@ -539,9 +509,13 @@
             <div id="instafeed">
               <!-- instagram feed imported here -->
             </div>
-            <div class="fb fb-like" data-share="true" data-width="450" data-show-faces="true">
-              <!-- facebook like/share here -->
-            </div>
+
+
+            <div class="fb fb-like" data-href="https://nataliacorrea.com/" data-width="" data-layout="button"
+              data-action="like" data-size="small" data-share="true"></div>
+            <!-- <div class="fb fb-like" data-share="true" data-width="450" data-show-faces="true">
+            </div> -->
+
           </div>
         </div>
       </section>
@@ -567,6 +541,41 @@
 
     <script type="text/javascript" src="./js/instafeed.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
+
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=1051014145379075&autoLogAppEvents=1"
+      nonce="lxeEaCYO"></script>
+
+      <script>
+        
+        // window.fbAsyncInit = function () {
+        //   FB.init({
+        //     appId: '1051014145379075',
+        //     autoLogAppEvents: true,
+        //     status: true,
+        //     xfbml: true,
+        //     version: 'v9.0'
+        //   });
+        //   FB.AppEvents.logPageView();
+        // };
+
+        // (function (d, s, id) {
+        //   var js, fjs = d.getElementsByTagName(s)[0];
+        //   if (d.getElementById(id)) { return; }
+        //   js = d.createElement(s); js.id = id;
+        //   js.src = "https://connect.facebook.net/en_US/sdk.js";
+        //   fjs.parentNode.insertBefore(js, fjs);
+        // }(document, 'script', 'facebook-jssdk'));
+
+        // FB.ui({
+        //   method: 'share',
+        //   href: 'https://developers.facebook.com/docs/'
+        // }, function (response) { });
+
+        /* :::::::::::::::::: end FACEBOOK ADD/SHARE :::::::::::::::::: */
+      </script>
 
 </body>
 </html>
