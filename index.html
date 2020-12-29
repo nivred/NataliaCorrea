@@ -11,26 +11,6 @@
 
     gtag('config', 'G-Z0H66XFXBZ');
   </script>
-  <script>
-    /* :::::::::::::::::: FACEBOOK ADD/SHARE :::::::::::::::::: */
-    window.fbAsyncInit = function () {
-      FB.init({
-        appId: '1051014145379075',
-        xfbml: true,
-        version: 'v9.0'
-      });
-      FB.AppEvents.logPageView();
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    /* :::::::::::::::::: end FACEBOOK ADD/SHARE :::::::::::::::::: */
-  </script>
 
   <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
 
@@ -40,6 +20,12 @@
   <meta name="description" content="Natalia Correa is a Health Coach helping sufferers of binge & emotional eating to build new beliefs about body image, food & self-care to redefine wellness">
   <meta name="keywords" content="Binge, Binging, Emotional Eating, Intuitive Eating, Integrative Nutrition, Integrative, Nutrition, Weight Gain, Weight Loss, Wellness, Lifestyle, Health, Health Coaching, Food Freedom, Mentoring ">
   <meta name="author" content="Natalia Correa">
+
+  <meta property="og:title" content="Natalia Correa | Health Coach" />
+  <meta property="og:url" content="https://nataliacorrea.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Natalia Correa is a Health Coach helping sufferers of binge & emotional eating to build new beliefs about body image, food & self-care to redefine wellness" />
+  <meta property="og:image" content="http://www.nataliacorrea.com/meditate.jpg" />
 
   <title>Natalia Correa | Health Coach</title>
 
@@ -53,11 +39,40 @@
 
   <link rel="stylesheet" href="css/app.css">
 
-  < src="https://kit.fontawesome.com/9ba4d583d5.js" crossorigin="anonymous"></>
+  <script src="https://kit.fontawesome.com/9ba4d583d5.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
+
+  <script>
+    /* :::::::::::::::::: FACEBOOK ADD/SHARE :::::::::::::::::: */
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '1051014145379075',
+        autoLogAppEvents: true,
+        status: true,
+        xfbml: true,
+        version: 'v9.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    FB.ui({
+      method: 'share',
+      href: 'https://developers.facebook.com/docs/'
+    }, function (response) { });
+
+    /* :::::::::::::::::: end FACEBOOK ADD/SHARE :::::::::::::::::: */
+  </script>
 
   <div class="main-container">
     <div id="top-btn" class="btn-fixed">
