@@ -594,13 +594,13 @@ nav #hamburger ~ label {
   color: var(--insta5);
   cursor: pointer;
   display: flex;
-  font-size: 2rem;
+  /* font-size: 2rem; */
   grid-column: 23/24;
   grid-row: 2;
   justify-content: center;
   height: 50px;
   width: 50px;
-  line-height: 2rem;
+  /* line-height: 2rem; */
   margin: 0;
   transform: rotate(-90deg);
   transform-origin: center;
