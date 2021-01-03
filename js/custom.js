@@ -1,23 +1,4 @@
 $(document).ready(function () {
-  // when hamburger clicked close menu
-  $('nav .menu i').on('click', function () {
-    $('nav .menu').css('display', 'none');
-    $('nav #hamburger ~ label').prop('checked', '');
-  });
-  // when hamburger clicked open menu
-  $('nav #hamburger ~ label').on('click', function () {
-    $('nav .menu').css('display', 'flex');
-  });
-  // when to-top button clicked move to top of document
-  $('.to-top').on('click', function () {
-    $('.to-top').removeClass('fade-in');
-    $('#nav-btn').css('bottom', '1rem');
-    $("html, body").animate({ scrollTop: 0 }, "slow");
-    return false;
-  });
-});
-
-$(document).ready(function () {
   if ($(window).scrollTop() > ($('#about').offset().top + 1000 - $(window).height())) {
     $('.to-top').addClass('fade-in');
     $('#nav-btn').css('bottom', '4rem');
@@ -27,25 +8,24 @@ $(document).ready(function () {
   }
 });
 
-
-$(document).ready(function () {
-  if ($(window).width() >= 1200) {
-    $('nav .menu').css('display', 'flex');
-    $('nav #hamburger ~ label').prop('checked', '');
-  } else {
-    $('nav .menu').css('display', 'none');
-    $('nav #hamburger ~ label').prop('checked', '');
-  }
-});
-$(window).resize(function () {
-  if ($(window).width() >= 1200) {
-    $('nav .menu').css('display', 'flex');
-    $('nav #hamburger ~ label').prop('checked', '');
-  } else {
-    $('nav .menu').css('display', 'none');
-    $('nav #hamburger ~ label').prop('checked', '');
-  }
-});
+// $(document).ready(function () {
+//   if ($(window).width() >= 1200) {
+//     $('nav .menu').css('display', 'flex');
+//     $('nav #hamburger ~ label').prop('checked', '');
+//   } else {
+//     $('nav .menu').css('display', 'none');
+//     $('nav #hamburger ~ label').prop('checked', '');
+//   }
+// });
+// $(window).resize(function () {
+//   if ($(window).width() >= 1200) {
+//     $('nav .menu').css('display', 'flex');
+//     $('nav #hamburger ~ label').prop('checked', '');
+//   } else {
+//     $('nav .menu').css('display', 'none');
+//     $('nav #hamburger ~ label').prop('checked', '');
+//   }
+// });
 
 $(window).scroll(function () {
   // Show BACK TO TOP button based on element variable
@@ -177,10 +157,69 @@ $('.scroll').on('click', function () {
   }, 1500, 'swing', function () { // length of duration (1.5 seconds) with 'swing' effect
     window.location.hash = target; // show hash target in URL for accessibility
   });
-  $('nav .menu').css('display', 'none');
-  $('nav #hamburger ~ label').prop('checked', '');
+  if ($(window).width() <= 1200) { // for mobile
+    $('nav .menu').css('display', 'none');
+    $('nav #hamburger ~ label').prop('checked', '');
+  }
 });
 /* :::::::::::::::::: end SMOOTH SCROLL :::::::::::::::::: */
+
+
+/* :::::::::::::::::: MOBILE NAVIGATION BEHAVIOR :::::::::::::::::: */
+// window size when ready
+$(document).ready(function () {
+  if ($(window).width() <= 1200) { // for mobile
+    // when hamburger clicked close menu
+    $('nav .menu i').on('click', function () {
+      $('nav .menu').css('display', 'none');
+      $('nav #hamburger ~ label').prop('checked', '');
+    });
+    // when hamburger clicked open menu
+    $('nav #hamburger ~ label').on('click', function () {
+      $('nav .menu').css('display', 'flex');
+    });
+    // when to-top button clicked move to top of document
+    $('.to-top').on('click', function () {
+      $('.to-top').removeClass('fade-in');
+      $('#nav-btn').css('bottom', '1rem');
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+  } else { // for tablet and larger
+    return
+  }
+});
+// resized window
+$(window).resize(function () {
+  if ($(window).width() <= 1200) { // for mobile
+    // when hamburger clicked close menu
+    $('nav .menu i').on('click', function () {
+      $('nav .menu').css('display', 'none');
+      $('nav #hamburger ~ label').prop('checked', '');
+    });
+    // when hamburger clicked open menu
+    $('nav #hamburger ~ label').on('click', function () {
+      $('nav .menu').css('display', 'flex');
+    });
+    // when to-top button clicked move to top of document
+    $('.to-top').on('click', function () {
+      $('.to-top').removeClass('fade-in');
+      $('#nav-btn').css('bottom', '1rem');
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+  } else { // for tablet and larger
+    return
+  }
+});
+/* :::::::::::::::::: end MOBILE NAVIGATION BEHAVIOR :::::::::::::::::: */
+
+
+
+
+
+
+
 
 
 /* :::::::::::::::::: ACCORDION TABBED BEHAVIOR :::::::::::::::::: */
