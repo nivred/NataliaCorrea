@@ -186,7 +186,13 @@ $(document).ready(function () {
       return false;
     });
   } else { // for tablet and larger
-    return
+    // when to-top button clicked move to top of document
+    $('.to-top').on('click', function () {
+      $('.to-top').removeClass('fade-in');
+      $('#nav-btn').css('bottom', '1rem');
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
   }
 });
 // resized window
@@ -209,7 +215,13 @@ $(window).resize(function () {
       return false;
     });
   } else { // for tablet and larger
-    return
+    // when to-top button clicked move to top of document
+    $('.to-top').on('click', function () {
+      $('.to-top').removeClass('fade-in');
+      $('#nav-btn').css('bottom', '1rem');
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
   }
 });
 /* :::::::::::::::::: end MOBILE NAVIGATION BEHAVIOR :::::::::::::::::: */
