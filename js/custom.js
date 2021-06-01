@@ -418,7 +418,9 @@ var feed = new Instafeed({
   resolution: 'standard_resolution',
   limit: 12,
   target: 'instafeed',
-  accessToken: 'IGQVJXVElBS21mcE9vZAHJxcFNmSHZA6ejZAiNzNON2FoV2o1RV9vWWxoZADJNa1psZA2NnQTZAVVWtDOS1WNm9EVDhsd2NLeVBJaDc0N1Ixc1RCR3VuUmttQ0VZAbG53TWV1blpGN0NYM3hYUC1yR0pGY2Y3egZDZD'
+  accessToken: 'IGQVJXdUhmcjdySldUbnYzcWpBNWJxYUJmM3BQNnZADWU5oR1VZAMG9GeTlBazk2Nkc4NHlXVnc5VkhsSmJ1cS1NTV9HMC1DN2V5S2xhZAnVaenRDS2FESmdsZADJjNVNYTVpMUk1Edldua3M5Y1JpcFoyWgZDZD'
+  // Update accessToken by visiting Facebook Developer account and generate new token using instructions here -> https://www.mageplaza.com/kb/how-to-get-instagram-feed-access-token.html
+  // In User Token Generator section, select Generate Token, login to IG account, enter code sent to phone IG, copy/paste new token above
 });
 feed.run();
 /* :::::::::::::::::: end INSTAFEED - DYNAMIC DISPLAY OF INSTAGRAM FEED :::::::::::::::::: */
