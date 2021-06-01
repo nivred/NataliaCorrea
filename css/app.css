@@ -398,6 +398,7 @@ a.cta {
   margin: 2rem auto;
   padding: 1rem 2rem;
   position: relative;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
@@ -410,6 +411,16 @@ a.cta.round {
   height: 50px; width: 50px;
   margin: 0;
   padding: 0;
+}
+a.cta .fa {
+  color: var(--insta4);
+  font-size: 3.75rem;
+  opacity: .25;
+  padding-right: 0.7rem;
+}
+a.cta:hover .fa {
+  color: var(--insta3);
+  opacity: .5;
 }
 @media screen and (min-width: 768px) {
   a.cta {
@@ -963,10 +974,23 @@ header .intro a.cta {
 }
 .about-section .certifications {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .about-section .certifications a {
   margin: 1rem;
+}
+.about-section .podcast-image img {
+  min-width: 100%;
+}
+.about-section .podcast-image img {
+  margin: 0 auto 2rem;
+  position: relative;
+  z-index: 10;
+}
+.about-section h3.fff {
+  margin-bottom: 2rem;
+  margin-top: 3rem;
 }
 /* --- end ABOUT --- */
 
@@ -1343,6 +1367,42 @@ q {font-style: italic;}
     margin: 1.5rem 0 0 1rem !important;
     height: 16rem;
     width: 16rem;
+  }
+  .about-section .certifications a.cta {
+    font-size: 1.15rem;
+  }
+  .about-section .podcast {
+    display: flex;
+    flex-direction: row;
+  }
+  .about-section .podcast a.cta {
+    margin: 0;
+  }
+  .about-section .podcast-image {
+    margin-right: 1.5rem;
+    min-width: 250px;
+  }
+  .about-section .podcast-image img {
+    display: block;
+    position: relative;
+    width: 100%;
+    box-shadow: 0px 1px 2px #b1b1b1;
+  }
+  .about-section .podcast-image::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 175px;
+    left: -102px;
+    width: 490px;
+    height: 10%;
+    /* background: linear-gradient(var(--insta4), #9198e5); */
+    background: url(/images/podcast.png) no-repeat center bottom;
+    background-size: 250px 30px;
+    transform: translate(0%, 800%) scaleY(-1);
+    z-index: -10;
+    filter: blur(30px);
+    opacity: .9;
   }
   /* --- end ABOUT --- */
 
@@ -1766,6 +1826,14 @@ q {font-style: italic;}
     height: 16rem;
     width: 16rem;
   }
+  .about-section .certifications {
+    flex-direction: row;
+    /* align-items: center; */
+  }
+  .about-section .podcast .cta {
+    margin: 0;
+  }
+
   /* --- end ABOUT --- */
 
   /* --- ACCORDION --- */
