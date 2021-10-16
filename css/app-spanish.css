@@ -1,3 +1,20 @@
+@media screen and (min-width: 1200px){
+  header .header-callout {
+    grid-row: 8/11;
+  }
+  header .header-callout h1 {
+    font-size: 2.05rem;
+  }
+  header .intro {
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+  }
+  header .intro .name ~p {
+    margin-bottom: 2rem;
+  }
+}
+
+
 .about-section h2:after {margin-left: 1.4rem; width: 90px;}
 @media screen and (min-width: 380px){
   .about-section h2:after {margin-left: 1.7rem; width: 114px;}
@@ -12,6 +29,36 @@
 }    
 @media screen and (min-width: 768px){
   .services-section h2:after {margin-left: 2.2rem; width: 130px;}
+}
+
+.reconnect-section h2:after {margin-left: .9rem; width: 215px;}
+@media screen and (min-width: 380px){
+  .reconnect-section h2:after {margin-left: 1.2rem; width: 270px;}
+}    
+@media screen and (min-width: 768px){
+  .reconnect-section h2:after {margin-left: 1.3rem; width: 330px;}
+}
+
+.nourish-section h2:after {margin-left: 0; width: 4.7rem;}
+.nourish-section h2:before {margin: 1.7rem 0 0 .9rem; width: 270px;}
+@media screen and (min-width: 375px){
+  .nourish-section h2:after {display: block; margin-left: 0; width: 75px;}
+  .nourish-section h2:before {margin: 1.8rem 0 0 .9rem; width: 275px;}
+}    
+@media screen and (min-width: 380px){
+  .nourish-section h2:after {margin-left: 0; width: 125px;}
+  .nourish-section h2:before {margin: 2.2rem 0 0 .9rem; width: 320px;}
+}    
+@media screen and (min-width: 410px){
+  .nourish-section h2:after {margin-left: 0; width: 95px;}
+  .nourish-section h2:before {margin: 2.2rem 0 0 .9rem; width: 350px;}
+}    
+@media screen and (min-width: 550px){
+  .nourish-section h2:after {margin-left: .9; width: 455px;}
+  .nourish-section h2:before {display: none;}
+}    
+@media screen and (min-width: 768px){
+  .nourish-section h2:after {margin-left: 1.3rem; width: 535px;}
 }
 
 .qa-section h2:after {margin-left: 0.8rem; width: 229px;}

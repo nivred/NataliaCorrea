@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  if ($(window).scrollTop() > ($('#start').offset().top + 1000 - $(window).height())) {
+  if ($(window).scrollTop() > ($('#about').offset().top + 1000 - $(window).height())) {
     $('.to-top').addClass('fade-in');
     $('#nav-btn').css('bottom', '4rem');
   } else {
@@ -8,9 +8,28 @@ $(document).ready(function () {
   }
 });
 
+// $(document).ready(function () {
+//   if ($(window).width() >= 1200) {
+//     $('nav .menu').css('display', 'flex');
+//     $('nav #hamburger ~ label').prop('checked', '');
+//   } else {
+//     $('nav .menu').css('display', 'none');
+//     $('nav #hamburger ~ label').prop('checked', '');
+//   }
+// });
+// $(window).resize(function () {
+//   if ($(window).width() >= 1200) {
+//     $('nav .menu').css('display', 'flex');
+//     $('nav #hamburger ~ label').prop('checked', '');
+//   } else {
+//     $('nav .menu').css('display', 'none');
+//     $('nav #hamburger ~ label').prop('checked', '');
+//   }
+// });
+
 $(window).scroll(function () {
   // Show BACK TO TOP button based on element variable
-  if ($(window).scrollTop() > ($('#start').offset().top + 300 - $(window).height())) {
+  if ($(window).scrollTop() > ($('#about').offset().top + 300 - $(window).height())) {
     $('.to-top').addClass('fade-in');
     $('#nav-btn').css('bottom', '4rem');
   } else {
@@ -236,7 +255,7 @@ for (let i = 0; i < accInput.length; i++) {
         $('.accordion-content', $(this)).each(function () {
           $(this).removeClass('show');
         })
-      });
+      }); 
       $(this).next().addClass('select');
       $(this).next().next().addClass('show');
     }
@@ -272,6 +291,113 @@ $(window).resize(function () {
 /* :::::::::::::::::: end ACCORDION BEHAVIOR :::::::::::::::::: */
 
 
+/* :::::::::::::::::: TESTIMONIALS - READ MORE :::::::::::::::::: */
+// window size when ready
+$(document).ready(function () {
+  if ($(window).width() >= 768) { // for tablet and larger
+    $('a.prev').css('left', '23rem');
+    $('a.next').css('right', '23rem');
+
+    $('.testimonial-item .read-more').on('click', function () {
+      $(this).parents('.front').hide(); // hide partial quote
+      $(this).parents('.front').next().css('display', 'block');
+      // show().delay(800).fadeIn(400); // show full quote
+    });
+    $('.testimonial-item .read-less').on('click', function () {
+      $(this).parents('.back').hide(); // hide partial quote
+      $(this).parents('.back').prev().css('display', 'block');
+    });    
+  } else { // for mobile
+    $('a.prev').css('left', '-1rem');
+    $('a.next').css('right', '-1rem');
+    $('.testimonial-item .read-more').on('click', function () {
+      $(this).parents('.front').hide(); // hide partial quote
+      $(this).parents('.front').next().css('display', 'block');
+        // show().delay(800).fadeIn(400); // show full quote
+      $('a.prev').css('left', '-4rem');
+      $('a.next').css('right', '-4rem');
+    });
+    $('.testimonial-item .read-less').on('click', function () {
+      console.log($(this));
+      $(this).parents('.back').hide(); // hide partial quote
+      $(this).parents('.back').prev().css('display', 'block');
+      $('a.prev').css('left', '-1rem');
+      $('a.next').css('right', '-1rem');
+    });    
+  }
+});
+// resized window
+$(window).resize(function () {
+  if ($(window).width() >= 768) { // for tablet and larger
+    $('a.prev').css('left', '23rem');
+    $('a.next').css('right', '23rem');
+
+    $('.testimonial-item .read-more').on('click', function () {
+      $(this).parents('.front').hide(); // hide partial quote
+      $(this).parents('.front').next().css('display', 'block');
+      // show().delay(800).fadeIn(400); // show full quote
+      $('a.prev').css('left', '23rem');
+      $('a.next').css('right', '23rem');
+    });
+    $('.testimonial-item .read-less').on('click', function () {
+      $(this).parents('.back').hide(); // hide partial quote
+      $(this).parents('.back').prev().css('display', 'block');
+      $('a.prev').css('left', '23rem');
+      $('a.next').css('right', '23rem');
+
+    });    
+  } else { // for mobile
+    $('a.prev').css('left', '-1rem');
+    $('a.next').css('right', '-1rem');
+
+    $('.testimonial-item .read-more').on('click', function () {
+      $(this).parents('.front').hide(); // hide partial quote
+      $(this).parents('.front').next().css('display', 'block');
+      // show().delay(800).fadeIn(400); // show full quote
+      $('a.prev').css('left', '-4rem');
+      $('a.next').css('right', '-4rem');
+    });
+    $('.testimonial-item .read-less').on('click', function () {
+      $(this).parents('.back').hide(); // hide partial quote
+      $(this).parents('.back').prev().css('display', 'block');
+      $('a.prev').css('left', '-1rem');
+      $('a.next').css('right', '-1rem');
+    });    
+  }
+});
+/* :::::::::::::::::: end TESTIMONIALS - READ MORE :::::::::::::::::: */
+
+
+/* :::::::::::::::::: CAROUSEL - FOR TESTIMONIALS :::::::::::::::::: */
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "flex";
+  dots[slideIndex - 1].className += " active";
+}
+/* :::::::::::::::::: end CAROUSEL - FOR TESTIMONIALS :::::::::::::::::: */
+
+
 /* :::::::::::::::::: BROWSER DETECTION :::::::::::::::::: */
 const DetectBrowser = function () {
   var isIE = false || !!document.documentMode;
@@ -286,3 +412,36 @@ DetectBrowser();
 /* :::::::::::::::::: end BROWSER DETECTION :::::::::::::::::: */
 
 
+/* :::::::::::::::::: INSTAFEED - DYNAMIC DISPLAY OF INSTAGRAM FEED :::::::::::::::::: */
+var feed = new Instafeed({
+  get: 'user',
+  userId: '212506693815055',
+  resolution: 'standard_resolution',
+  limit: 12,
+  target: 'instafeed',
+  accessToken: 'IGQVJXdUhmcjdySldUbnYzcWpBNWJxYUJmM3BQNnZADWU5oR1VZAMG9GeTlBazk2Nkc4NHlXVnc5VkhsSmJ1cS1NTV9HMC1DN2V5S2xhZAnVaenRDS2FESmdsZADJjNVNYTVpMUk1Edldua3M5Y1JpcFoyWgZDZD'
+  // Update accessToken by visiting Facebook Developer account and generate new token using instructions here -> https://www.mageplaza.com/kb/how-to-get-instagram-feed-access-token.html
+  // In User Token Generator section, select Generate Token, login to IG account, enter code sent to phone IG, copy/paste new token above
+});
+feed.run();
+/* :::::::::::::::::: end INSTAFEED - DYNAMIC DISPLAY OF INSTAGRAM FEED :::::::::::::::::: */
+
+
+// /* :::::::::::::::::: FACEBOOK ADD/SHARE :::::::::::::::::: */
+//   window.fbAsyncInit = function () {
+//     FB.init({
+//       appId: '1051014145379075',
+//       xfbml: true,
+//       version: 'v9.0'
+//     });
+//       FB.AppEvents.logPageView();
+//     };
+
+//     (function (d, s, id) {
+//       var js, fjs = d.getElementsByTagName(s)[0];
+//       if (d.getElementById(id)) { return; }
+//       js = d.createElement(s); js.id = id;
+//       js.src = "https://connect.facebook.net/en_US/sdk.js";
+//       fjs.parentNode.insertBefore(js, fjs);
+//     }(document, 'script', 'facebook-jssdk'));
+// /* :::::::::::::::::: end FACEBOOK ADD/SHARE :::::::::::::::::: */
