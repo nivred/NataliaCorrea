@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  if ($(window).scrollTop() > ($('#about').offset().top + 1000 - $(window).height())) {
+  if ($(window).scrollTop() > ($('#start').offset().top + 1000 - $(window).height())) {
     $('.to-top').addClass('fade-in');
     $('#nav-btn').css('bottom', '4rem');
   } else {
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
 $(window).scroll(function () {
   // Show BACK TO TOP button based on element variable
-  if ($(window).scrollTop() > ($('#about').offset().top + 300 - $(window).height())) {
+  if ($(window).scrollTop() > ($('#start').offset().top + 300 - $(window).height())) {
     $('.to-top').addClass('fade-in');
     $('#nav-btn').css('bottom', '4rem');
   } else {
@@ -71,7 +71,6 @@ $(window).scroll(function () {
     imagePos = $(this).offset().top - thirdScreenHeight;
     imageHeight = $(this).height();
     topOfWindow = $(window).scrollTop();
-    console.log(imageHeight, imagePos, topOfWindow)
     // if element is greater than .65 of screen height - animate
     if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
       if ($(this).hasClass('highlight-dark')) {
@@ -239,161 +238,174 @@ $(window).resize(function () {
 // by default, have first tabbed accordion item selected and showing content
 $('.accordions.tabbed .accordion-item:first-child label').addClass('select');
 
+const acc = $('.accordions.tabbed')
 const accInput = $('.accordions.tabbed input');
 const accPanel = $('.accordions.tabbed label');
 const accContent = $('.accordions.tabbed .accordion-content');
 
-// when accordion clicked
-for (let i = 0; i < accInput.length; i++) {
-  accInput[i].addEventListener('click', function () {
 
-    if ($(this).parent().parent().hasClass('tabbed')) {
-      $(this).parent().parent().each(function () {
-        $('label', $(this)).each(function () {
-          $(this).removeClass('select');
-        })
-        $('.accordion-content', $(this)).each(function () {
-          $(this).removeClass('show');
-        })
-      }); 
-      $(this).next().addClass('select');
-      $(this).next().next().addClass('show');
+if (acc) {
+  
+  // when accordion clicked
+  for (let i = 0; i < accInput.length; i++) {
+    accInput[i].addEventListener('click', function () {
+
+      if ($(this).parent().parent().hasClass('tabbed')) {
+        $(this).parent().parent().each(function () {
+          $('label', $(this)).each(function () {
+            $(this).removeClass('select');
+          })
+          $('.accordion-content', $(this)).each(function () {
+            $(this).removeClass('show');
+          })
+        }); 
+        $(this).next().addClass('select');
+        $(this).next().next().addClass('show');
+      }
+
+      // hide content and unselect all accordion items
+      // for (let j = 0; j < accContent.length; j++) {
+      //   accContent[j].classList.remove('show');
+      //   accPanel[j].classList.remove('select');
+      // }
+      // clicked accordion item is selected and shows it's content
+      // this.nextElementSibling.classList.add('select');
+      // this.nextElementSibling.nextElementSibling.classList.add('show');
+    })
+  }
+
+  // on screen size change under 1024px - remove tabbed functionality - else add
+  $(document).ready(function () {
+    if ($(window).width() >= 1024) {
+      $('.accordions .accordion-content').addClass('hide');
+    } else {
+      $('.accordions .accordion-content').removeClass('hide');
+      $('.accordions .accordion-content:first-child').removeClass('show');
     }
+  });
+  $(window).resize(function () {
+    if ($(window).width() >= 1024) {
+      $('.accordions .accordion-content').addClass('hide');
+    } else {
+      $('.accordions .accordion-content').removeClass('hide');
+      $('.accordions .accordion-content:first-child').removeClass('show');
+    }
+  });
 
-    // hide content and unselect all accordion items
-    // for (let j = 0; j < accContent.length; j++) {
-    //   accContent[j].classList.remove('show');
-    //   accPanel[j].classList.remove('select');
-    // }
-    // clicked accordion item is selected and shows it's content
-    // this.nextElementSibling.classList.add('select');
-    // this.nextElementSibling.nextElementSibling.classList.add('show');
-  })
 }
-
-// on screen size change under 1024px - remove tabbed functionality - else add
-$(document).ready(function () {
-  if ($(window).width() >= 1024) {
-    $('.accordions .accordion-content').addClass('hide');
-  } else {
-    $('.accordions .accordion-content').removeClass('hide');
-    $('.accordions .accordion-content:first-child').removeClass('show');
-  }
-});
-$(window).resize(function () {
-  if ($(window).width() >= 1024) {
-    $('.accordions .accordion-content').addClass('hide');
-  } else {
-    $('.accordions .accordion-content').removeClass('hide');
-    $('.accordions .accordion-content:first-child').removeClass('show');
-  }
-});
 /* :::::::::::::::::: end ACCORDION BEHAVIOR :::::::::::::::::: */
 
 
 /* :::::::::::::::::: TESTIMONIALS - READ MORE :::::::::::::::::: */
-// window size when ready
-$(document).ready(function () {
-  if ($(window).width() >= 768) { // for tablet and larger
-    $('a.prev').css('left', '23rem');
-    $('a.next').css('right', '23rem');
+const testimonials = $('.testimonials-section')
+if (testimonials) {
+  // window size when ready
+  $(document).ready(function () {
+    if ($(window).width() >= 768) { // for tablet and larger
+      $('a.prev').css('left', '23rem');
+      $('a.next').css('right', '23rem');
 
-    $('.testimonial-item .read-more').on('click', function () {
-      $(this).parents('.front').hide(); // hide partial quote
-      $(this).parents('.front').next().css('display', 'block');
-      // show().delay(800).fadeIn(400); // show full quote
-    });
-    $('.testimonial-item .read-less').on('click', function () {
-      $(this).parents('.back').hide(); // hide partial quote
-      $(this).parents('.back').prev().css('display', 'block');
-    });    
-  } else { // for mobile
-    $('a.prev').css('left', '-1rem');
-    $('a.next').css('right', '-1rem');
-    $('.testimonial-item .read-more').on('click', function () {
-      $(this).parents('.front').hide(); // hide partial quote
-      $(this).parents('.front').next().css('display', 'block');
+      $('.testimonial-item .read-more').on('click', function () {
+        $(this).parents('.front').hide(); // hide partial quote
+        $(this).parents('.front').next().css('display', 'block');
         // show().delay(800).fadeIn(400); // show full quote
-      $('a.prev').css('left', '-4rem');
-      $('a.next').css('right', '-4rem');
-    });
-    $('.testimonial-item .read-less').on('click', function () {
-      console.log($(this));
-      $(this).parents('.back').hide(); // hide partial quote
-      $(this).parents('.back').prev().css('display', 'block');
+      });
+      $('.testimonial-item .read-less').on('click', function () {
+        $(this).parents('.back').hide(); // hide partial quote
+        $(this).parents('.back').prev().css('display', 'block');
+      });
+    } else { // for mobile
       $('a.prev').css('left', '-1rem');
       $('a.next').css('right', '-1rem');
-    });    
-  }
-});
-// resized window
-$(window).resize(function () {
-  if ($(window).width() >= 768) { // for tablet and larger
-    $('a.prev').css('left', '23rem');
-    $('a.next').css('right', '23rem');
-
-    $('.testimonial-item .read-more').on('click', function () {
-      $(this).parents('.front').hide(); // hide partial quote
-      $(this).parents('.front').next().css('display', 'block');
-      // show().delay(800).fadeIn(400); // show full quote
+      $('.testimonial-item .read-more').on('click', function () {
+        $(this).parents('.front').hide(); // hide partial quote
+        $(this).parents('.front').next().css('display', 'block');
+        // show().delay(800).fadeIn(400); // show full quote
+        $('a.prev').css('left', '-4rem');
+        $('a.next').css('right', '-4rem');
+      });
+      $('.testimonial-item .read-less').on('click', function () {
+        // console.log($(this));
+        $(this).parents('.back').hide(); // hide partial quote
+        $(this).parents('.back').prev().css('display', 'block');
+        $('a.prev').css('left', '-1rem');
+        $('a.next').css('right', '-1rem');
+      });
+    }
+  });
+  // resized window
+  $(window).resize(function () {
+    if ($(window).width() >= 768) { // for tablet and larger
       $('a.prev').css('left', '23rem');
       $('a.next').css('right', '23rem');
-    });
-    $('.testimonial-item .read-less').on('click', function () {
-      $(this).parents('.back').hide(); // hide partial quote
-      $(this).parents('.back').prev().css('display', 'block');
-      $('a.prev').css('left', '23rem');
-      $('a.next').css('right', '23rem');
 
-    });    
-  } else { // for mobile
-    $('a.prev').css('left', '-1rem');
-    $('a.next').css('right', '-1rem');
+      $('.testimonial-item .read-more').on('click', function () {
+        $(this).parents('.front').hide(); // hide partial quote
+        $(this).parents('.front').next().css('display', 'block');
+        // show().delay(800).fadeIn(400); // show full quote
+        $('a.prev').css('left', '23rem');
+        $('a.next').css('right', '23rem');
+      });
+      $('.testimonial-item .read-less').on('click', function () {
+        $(this).parents('.back').hide(); // hide partial quote
+        $(this).parents('.back').prev().css('display', 'block');
+        $('a.prev').css('left', '23rem');
+        $('a.next').css('right', '23rem');
 
-    $('.testimonial-item .read-more').on('click', function () {
-      $(this).parents('.front').hide(); // hide partial quote
-      $(this).parents('.front').next().css('display', 'block');
-      // show().delay(800).fadeIn(400); // show full quote
-      $('a.prev').css('left', '-4rem');
-      $('a.next').css('right', '-4rem');
-    });
-    $('.testimonial-item .read-less').on('click', function () {
-      $(this).parents('.back').hide(); // hide partial quote
-      $(this).parents('.back').prev().css('display', 'block');
+      });
+    } else { // for mobile
       $('a.prev').css('left', '-1rem');
       $('a.next').css('right', '-1rem');
-    });    
-  }
-});
+
+      $('.testimonial-item .read-more').on('click', function () {
+        $(this).parents('.front').hide(); // hide partial quote
+        $(this).parents('.front').next().css('display', 'block');
+        // show().delay(800).fadeIn(400); // show full quote
+        $('a.prev').css('left', '-4rem');
+        $('a.next').css('right', '-4rem');
+      });
+      $('.testimonial-item .read-less').on('click', function () {
+        $(this).parents('.back').hide(); // hide partial quote
+        $(this).parents('.back').prev().css('display', 'block');
+        $('a.prev').css('left', '-1rem');
+        $('a.next').css('right', '-1rem');
+      });
+    }
+  });
+
+}
 /* :::::::::::::::::: end TESTIMONIALS - READ MORE :::::::::::::::::: */
 
 
 /* :::::::::::::::::: CAROUSEL - FOR TESTIMONIALS :::::::::::::::::: */
-var slideIndex = 1;
-showSlides(slideIndex);
+if (testimonials) {
+  var slideIndex = 1;
+  showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
   }
-  slides[slideIndex - 1].style.display = "flex";
-  dots[slideIndex - 1].className += " active";
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "flex";
+    dots[slideIndex - 1].className += " active";
+  }
+
 }
 /* :::::::::::::::::: end CAROUSEL - FOR TESTIMONIALS :::::::::::::::::: */
 
